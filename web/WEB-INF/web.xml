@@ -4,9 +4,17 @@
         <servlet-name>AddToCart</servlet-name>
         <servlet-class>za.ac.tut.web.AddToCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadImageServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.UploadImageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddToCart</servlet-name>
         <url-pattern>/AddToCart.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadImageServlet</servlet-name>
+        <url-pattern>/UploadImageServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
