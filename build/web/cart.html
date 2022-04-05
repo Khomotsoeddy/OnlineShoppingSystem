@@ -13,23 +13,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
 
-        <div class="container">
+        <div class="header">
 
-            <div class="navbar">
+            <div class="container">
 
-                <div class="logo">
-                    <a href="index.html"><img src="C:/Users/Asus/Documents/NetBeansProjects/OnlineShoppingFinal/web/pictures/IMG_20181024_080006.jpg" width="50px"/></a>                </div>
-                <nav>
-                    <ul id="menuItems">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="products.html">PRODUCT</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="account.html">ACCOUNT</a></li>
-                    </ul>
-                    <a href="cart.html"><img src="C:/Users/Asus/Documents/NetBeansProjects/OnlineShoppingFinal/web/pictures/IMG_20181024_080017.jpg" width="15px"/></a>
-                    <img src="C:/Users/Asus/Documents/NetBeansProjects/OnlineShoppingFinal/web/pictures/IMG_20181024_080006.jpg" width="15px" class="menu-icon" onclick="menutoggle()"/>
-                </nav>
+                <div class="navbar">
+
+                    <div class="logo">
+                        <a href="index.html"><img src="./pictures/logo_icon.jpeg" width="160" height="80"/></a>
+                    </div>
+                    <nav>
+                        <ul id="menuItems">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="products.html">PRODUCT</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="account.html">ACCOUNT</a></li>
+                        </ul>
+                        <a href="cart.html"><img src="./pictures/cart.png" width="15px"/></a>
+                        <img src="./pictures/menu.png" width="15px" class="menu-icon" onclick="menutoggle()"/>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div class="col_2">
+                        <h1>Have your style this summer</h1>
+
+                        <p>We give you best look this summer</p>
+                        <a href="#" class="btn">Explore more &#8594;</a>
+                    </div>
+                    <div class="col_2">
+                        <img src="./pictures/display_icon.png"/>
+                    </div>
+                </div>
             </div>
         </div>
         <!------------Cart item details------------->
@@ -37,6 +52,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <table>
                 <tr>
                     <th>Product</th>
+                    <th>Size</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
 
@@ -52,7 +68,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"/></td>
+                    <td>small</td>
+                    <td>1</td>
                     <td>105.00</td>
                 </tr>
                 <tr>
@@ -66,7 +83,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"/></td>
+                    <td>small</td>
+                    <td>1</td>
                     <td>105.00</td>
                 </tr>
                 <tr>
@@ -80,7 +98,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"/></td>
+                    <td>small</td>
+                    <td>7</td>
                     <td>105.00</td>
                 </tr>
                 <tr>
@@ -94,7 +113,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"/></td>
+                    <td>small</td>
+                    <td>7</td>
                     <td>105.00</td>
                 </tr>
             </table>
@@ -126,12 +146,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             Download our app for Android and IOS mobile phone.
                         </p>
                         <div class="app_logo">
-                            <img src="C:/Users/Asus/Documents/NetBeansProjects/OnlineShoppingFinal/web/pictures/IMG_20181024_080036.jpg" width="200" height="100"/>
-                            <img src="C:/Users/Asus/Documents/NetBeansProjects/OnlineShoppingFinal/web/pictures/IMG_20181024_080036.jpg" width="200" height="100"/>
+                            <img src="./pictures/play-store.png" width="200" height="100"/>
+                            <img src="./pictures/app-store.png" width="200" height="100"/>
                         </div>
                     </div>
                     <div class="footer_col_2">
-                        <img src="C:/Users/Asus/Documents/NetBeansProjects/OnlineShoppingFinal/web/pictures/IMG_20181024_080036.jpg" width="150" height="100"/>
+                        <img src="./pictures/logo_icon.jpeg" width="150" height="100"/>
                         <p>
                             Our Purpose Is To Sustainably Make The Pleasure And Benefits Of Sports Accessible To Many.
                         </p>

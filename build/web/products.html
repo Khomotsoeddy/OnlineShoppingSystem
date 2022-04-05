@@ -5,7 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>JuniorStore | Products</title>
+        <title>Power Gym | Products</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
@@ -13,25 +13,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
 
-        <div class="container">
+        <div class="header">
 
-            <div class="navbar">
+            <div class="container">
 
-                <div class="logo">
-                    <a href="index.html"><img src="./pictures/IMG_20181024_080006.jpg" width="50px"/></a>                </div>
-                <nav>
-                    <ul id="menuItems">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="products.html">PRODUCT</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="account.html">ACCOUNT</a></li>
-                    </ul>
-                    <a href="cart.html"><img src="./pictures/IMG_20181024_080017.jpg" width="15px"/></a>
-                    <img src="./pictures/IMG_20181024_080006.jpg" width="15px" class="menu-icon" onclick="menutoggle()"/>
-                </nav>
+                <div class="navbar">
+
+                    <div class="logo">
+                        <a href="index.html"><img src="./pictures/logo_icon.jpeg" width="160" height="80"/></a>
+                    </div>
+                    <nav>
+                        <ul id="menuItems">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="products.html">PRODUCT</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="account.html">ACCOUNT</a></li>
+                        </ul>
+                        <a href="cart.html"><img src="./pictures/cart.png" width="15px"/></a>
+                        <img src="./pictures/menu.png" width="15px" class="menu-icon" onclick="menutoggle()"/>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div class="col_2">
+                        <h1>Have your style this summer</h1>
+
+                        <p>We give you best look this summer</p>
+                        <a href="#" class="btn">Explore more &#8594;</a>
+                    </div>
+                    <div class="col_2">
+                        <img src="./pictures/display_icon.png"/>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <!------------All products--------->
+        
         <div class="small_container">
             <div class="row row_2">
                 <h2 class="products">All Products</h2>
@@ -208,12 +226,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             Download our app for Android and IOS mobile phone.
                         </p>
                         <div class="app_logo">
-                            <img src="./pictures/IMG_20181024_080036.jpg" width="200" height="100"/>
-                            <img src="./pictures/IMG_20181024_080036.jpg" width="200" height="100"/>
+                            <img src="./pictures/play-store.png" width="200" height="100"/>
+                            <img src="./pictures/app-store.png" width="200" height="100"/>
                         </div>
                     </div>
                     <div class="footer_col_2">
-                        <img src="./pictures/IMG_20181024_080036.jpg" width="150" height="100"/>
+                        <img src="./pictures/logo_icon.jpeg" width="150" height="100"/>
                         <p>
                             Our Purpose Is To Sustainably Make The Pleasure And Benefits Of Sports Accessible To Many.
                         </p>
