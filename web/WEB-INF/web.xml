@@ -8,6 +8,14 @@
         <servlet-name>UploadImageServlet</servlet-name>
         <servlet-class>za.ac.tut.web.UploadImageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.RegisterServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddToCart</servlet-name>
         <url-pattern>/AddToCart.do</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>UploadImageServlet</servlet-name>
         <url-pattern>/UploadImageServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -402,10 +402,10 @@ th:last-child{
 .form_container{
     background: #fff;
     width: 300px;
-    height: 400px;
+    height: 600px;
     position: relative;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     margin: auto;
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
     overflow: hidden;
@@ -425,7 +425,7 @@ th:last-child{
     max-width: 300px;
     padding: 0 20px;
     position: absolute;
-    top: 130px;
+    top: 50px;
     transition: transform 3s;
 }
 form input{

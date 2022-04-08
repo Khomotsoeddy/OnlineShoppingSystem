@@ -1,15 +1,14 @@
 <%-- 
-    Document   : cart
-    Created on : 02 Apr 2022, 22:02:16
+    Document   : products
+    Created on : 08 Apr 2022, 19:07:11
     Author     : Asus
 --%>
 
-<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Power Gym | Cart Page</title>
+        <title>Power Gym | Products</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
@@ -17,15 +16,11 @@
     </head>
     <body>
         <%
-            String productName =(String) request.getAttribute("productName");
-            String productLocation = (String) request.getAttribute("productLocation");
-            Integer quantity = (Integer) request.getAttribute("quantity");
-            String size = (String) request.getAttribute("size");
-            Double price = (Double) request.getAttribute("price");
-            Double subtotal = quantity * price;
-            DecimalFormat df = new DecimalFormat("#,##");
+            String pictureName;
+            String productName;
+            Double price;
         %>
-<div class="header">
+        <div class="header">
 
             <div class="container">
 
@@ -59,57 +54,40 @@
                 </div>
             </div>
         </div>
-        <!------------Cart item details------------->
-        <div class="small_container cart_page">
-            <table>
-                <tr>
-                    <th>Product</th>
-                    <th>Size</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
+        
+        <!------------All products--------->
+        
+        <div class="small_container">
+            <div class="row row_2">
+                <h2 class="products">All Products</h2>
+                <select>
+                    <option>Sort By Default</option>
+                    <option>Sort By Price</option>
+                    <option>Sort By Brand</option>
+                </select>
+            </div>
 
-                </tr>
+            <div class="row">
                 <%
-                    for(int i=0;i<2;i++){
+                    for(int i=0;i<10;i++){
                 %>
-                <tr>
-                    <td>
-                        <div class="cart_info">
-                            <img src="./web/pictures/"<%=productLocation%>/>
-                            <div>
-                                <p><%=productName%></p>
-                                <small>R<%=price%></small><br>
-                                <a href="#">Remove</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td><%=size%></td>
-                    <td><%=quantity%></td>
-                    <td><%=df.format(subtotal)%></td>
-                </tr>
+                <div class="col_4">
+                    <a href="./product-details.html"><img src="pictures/IMG_20181024_080006.jpg"/></a>
+                    <a href="./product-details.html"><h4>Hello lloo</h4></a>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>                        
+                    <p>R150.00</p>
+                </div>
                 <%
                     }
                 %>
-            </table>
-           <!---------------Total price table---------------->
-            <div class="total_price">
-                <table>
-                    <tr>
-                        <th>
-                            Total Quantity
-                        </th>
-                        <th>
-                            Total Price
-                        </th>
-                    </tr>
-                    <tr>
-                        <td><%=quantity++%></td>
-                        <td><%=df.format(subtotal++)%></td>
-                    </tr>
-                </table>
             </div>
         </div>
-
         <!---------footer---------->
         <div class="footer">
             <div class="container">
@@ -153,9 +131,7 @@
                 <p class="copyright">Copyright 2022</p>
             </div>
         </div>
-
         <!-------js for toggle menu--------->
-        
         <script>
             var menuItems = document.getElementById("menuItems");
             menuItems.style.maxHeight = "0px";

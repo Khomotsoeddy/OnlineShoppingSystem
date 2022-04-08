@@ -37,7 +37,7 @@
                     <nav>
                         <ul id="menuItems">
                             <li><a href="index.html">HOME</a></li>
-                            <li><a href="products.html">PRODUCT</a></li>
+                            <li><a href="products.jsp">PRODUCT</a></li>
                             <li><a href="#">ABOUT</a></li>
                             <li><a href="#">CONTACT</a></li>
                             <li><a href="account.html">ACCOUNT</a></li>
@@ -51,7 +51,7 @@
                         <h1>Have your style this summer</h1>
 
                         <p>We give you best look this summer</p>
-                        <a href="#" class="btn">Explore more &#8594;</a>
+                        <a href="products.jsp" class="btn">Explore more &#8594;</a>
                     </div>
                     <div class="col_2">
                         <img src="./pictures/display_icon.png"/>
