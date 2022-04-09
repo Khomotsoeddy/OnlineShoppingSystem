@@ -383,7 +383,7 @@ td img:hover{
 .total_price table{
     border-top: 3px solid #ff523b;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
 }
 td:last-child{
     text-align: right;
@@ -391,6 +391,11 @@ td:last-child{
 th:last-child{
     text-align: right;
 }
+.btn-decre, .btn-incre{
+    box-shadow: none;
+    font-size: 25px;
+}
+
 
 /*-----------account page-------------*/
 
