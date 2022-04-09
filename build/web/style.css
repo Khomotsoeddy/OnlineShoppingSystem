@@ -33,7 +33,7 @@ p{
     padding-left: 25px;
     padding-right: 25px;
 }
-.row{
+.row_{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -52,7 +52,7 @@ p{
     line-height: 50px;
     margin: 25px 0;
 }
-.btn{
+.butn{
     display: inline-block;
     background: #ff423b;
     color: #fff;
@@ -61,7 +61,7 @@ p{
     border-radius: 30px;
     transition: background 0.5s;
 }
-.btn:hover{
+.butn:hover{
     background: #563434;
 }
 .header{
@@ -294,7 +294,7 @@ select:focus{
 .single_product .col_2 img{
     padding: 0;
 }
-.single_product input{
+.small_container input{
     border:1px solid #ff523b;
     border-radius: 10px;
     width: 50px;
@@ -435,13 +435,13 @@ form input{
     padding: 0 10px;
     border: 1px solid #ccc;
 }
-form .btn{
+form .butn{
     width: 100%;
     border: none;
     cursor: pointer;
     margin: 10px 0;
 }
-form .btn:focus{
+form .butn:focus{
     outline: none;
 }
 #login_form{

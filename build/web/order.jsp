@@ -1,6 +1,6 @@
 <%-- 
-    Document   : cart
-    Created on : 09 Apr 2022, 02:20:08
+    Document   : order
+    Created on : 09 Apr 2022, 02:20:19
     Author     : Asus
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <%@include file="include/header.jsp"%>
-        <title>Cart Page</title>
+        <title>Order Page</title>
     </head>
     <body>
         <%@include file="include/navbar.jsp"%>
