@@ -29,10 +29,11 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("userName" )!= null){
-            request.getSession().removeAttribute("userName");
+        
+        if (request.getSession().getAttribute("emailAddress") != null) {
+            request.getSession().removeAttribute("emailAddress");
             response.sendRedirect("login.jsp");
-        }else{
+        } else {
             response.sendRedirect("index.jsp");
         }
     }

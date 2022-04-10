@@ -6,6 +6,7 @@ package za.ac.tut.businness;
 
 import java.util.ArrayList;
 import java.util.List;
+import za.ac.tut.model.Cart;
 import za.ac.tut.model.Products;
 
 /**
@@ -13,34 +14,72 @@ import za.ac.tut.model.Products;
  * @author Asus
  */
 public class ProductsProcessoor {
-    
-    public List <Products> getAllProducts(){
+
+    public ProductsProcessoor() {
+    }
+
+    public List<Products> getAllProducts() {
         List<Products> products = new ArrayList<>();
-        //try{
-//            int i =0;
-//            i++;
-//            while(i<2){
-                Products row = new Products();
-                row.setProductId(0);
-                row.setName("Red T-Shirt");
-                row.setCategory("T-Shirt");
-                row.setPrice("160.99");
-                row.setImage("buy-1.jpg");
-                
-                products.add(row);
-                
-//                row.setProductId(1);
-//                row.setName("Black Shoes");
-//                row.setCategory("Shoes");
-//                row.setPrice("160.99");
-//                row.setImage("buy-2.jpg");
-//                
-//                products.add(row);
-            //}
-            
-//        }catch(Exception ex){
-//            ex.printStackTrace();
-//        }
+
+        Products row = new Products();
+        row.setProductId(100);
+        row.setName("product_name");
+        row.setImage("buy-1.jpg");
+        row.setPrice(176);
+        row.setCategory("category");
+
+        products.add(row);
+
         return products;
+    }
+
+    public ArrayList<Cart> getCartProducts(ArrayList<Cart> cartList) {
+        ArrayList<Cart> products = new ArrayList<>();
+
+        try {
+            if (cartList.size() > 0) {
+                for (Cart items : cartList) {
+                    //select all from product where id = items.getProductId();
+
+                    Cart row = new Cart();
+                    
+                    row.setProductId(100);
+                    row.setName("product_name");
+                    row.setImage("buy-1.jpg");
+                    row.setPrice(176);
+                    row.setCategory("category");
+                    row.setQuantity(items.getQuantity());
+                    
+                    products.add(row);
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return products;
+    }
+
+    public double getTotalPrice(ArrayList<Cart> cartList) {
+        double sum = 0;
+
+        try {
+            if (cartList.size() > 0) {
+                for (Cart c : cartList) {
+                    //select price where product_id = c.getProductId()
+
+                    //while(rs.next()){
+                    //sum =+ rs.getDouble("product_price) * c.getQuantity();
+                    //}
+                    c.setPrice(179);
+                    sum = c.getPrice() * c.getQuantity();
+
+                }
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return sum;
     }
 }

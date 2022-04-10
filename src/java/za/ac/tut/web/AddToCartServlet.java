@@ -60,9 +60,6 @@ public class AddToCartServlet extends HttpServlet {
                 cartList.add(ct);
                 response.sendRedirect("products.jsp");
             }
-            for (Cart d : cart_List) {
-                System.out.println(d.getProductId());
-            }
         }
     }
 }

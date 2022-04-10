@@ -4,8 +4,34 @@
     Author     : Asus
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="za.ac.tut.businness.ProductsProcessoor"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="za.ac.tut.model.Cart"%>
+<%@page import="za.ac.tut.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    DecimalFormat df = new DecimalFormat("#.##");
+    request.setAttribute("df", df);
+    Customer emailAddress = (Customer) request.getSession().getAttribute("emailAddress");
+    if (emailAddress != null) {
+        request.setAttribute("emailAddress", emailAddress);
+    }
+    
+    ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
+    double totalPrice =0;
+    ProductsProcessoor pp = new ProductsProcessoor();
+        List<Cart> cartProduct= null;
+    if (cart_List != null) {
+        cartProduct = pp.getCartProducts(cart_List);
+        totalPrice = pp.getTotalPrice(cart_List);
+        request.setAttribute("cart_List", cart_List);
+        request.setAttribute("totalPrice", totalPrice);
+    }
+    
+%>
 <html>
     <head>
         <%@include file="include/header.jsp"%>
@@ -23,41 +49,55 @@
 
                 </tr>
                 <%
-                    for(int i=0;i<2;i++){
+                    if (cart_List != null) {
+                        for (Cart c : cartProduct) {
                 %>
+
+
                 <tr>
                     <td>
                         <div class="cart_info">
-                            <img src="./product_images/buy-1.jpg"/>
+                            <img src="./product_images/<%=c.getImage()%>"/>
                             <div>
-                                <p>red t_shirt</p>
-                                <small>R456</small><br>
+                                <p><%=c.getName()%></p>
+                                <small>R<%=c.getPrice()%></small><br>
                                 <a href="#">Remove</a>
                             </div>
                         </div>
                     </td>
-                    <td>small</td>
                     <td>
-                       <form action="" methot="post" class="form-inline">
-                            <input type="hidden"  name="id" value="1" class="form-input">
+                        <select>
+                            <option>Select Size</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                    </td>
+                    <td>
+                        <form action="" method="post" class="form-inline">
+                            <input type="hidden"  name="id" value="<%=c.getProductId()%>" class="form-input">
                             <div class="form-group d-flex justify-content-between">
-                                <a class="btn btn-sm btn-decre" href="">
+                                <a class="btn btn-sm btn-decre" href="QuantityEncrDecrServlet.do?action=dec&id=<%=c.getProductId()%>">
                                     <i class="fas fa-minus-square"></i>
                                 </a>
-                                <input type="text" name="quantity" class="form-control" value="1" readonly>
-                                <a class="btn btn-sm btn-incre" href="" >
+                                <input type="text" name="quantity" value="<%=c.getQuantity()%>" readonly>
+
+                                <a class="btn btn-sm btn-incre" href="QuantityEncrDecrServlet.do?action=inc&id=<%=c.getProductId()%>" >
                                     <i class="fas fa-plus-square"></i>
                                 </a>
                             </div>
                         </form>
-                      </td>
-                    <td>456</td>
+                    </td>
+                    <td><%=df.format(c.getPrice() * c.getQuantity())%></td>
                 </tr>
+
                 <%
+                        }
                     }
                 %>
             </table>
             <!---------------Total price table---------------->
+
             <div class="total_price">
                 <table>
                     <tr>
@@ -69,13 +109,18 @@
                         </th>
                     </tr>
                     <tr>
-                        <td>17</td>
-                        <td>1333</td>
+                        <td>
+                            17
+                        </td>
+                        <td>
+                            <!--------{ (totalPrice>0)?totalPrice:0.0 }--------->
+                            <%=totalPrice%>
+                        </td>
                     </tr>
                 </table>
-                
+
             </div>
-            <a class="mx-3 btn-primary" href="#">CheckOut</a>
+            <a class="butn" href="#">CheckOut &#8594;</a>
         </div>
         <%@include file="include/footer.jsp"%>
     </body>

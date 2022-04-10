@@ -17,15 +17,22 @@
                             <a class="nav-link active" href="login.jsp">Login</a>
                         </li>
                         <!---------I must add if statement--------->
+                        
                         <li class="nav-item active">
-                            <a class="nav-link" href="cart.jsp">Cart</a>
+                            <a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger px-1">${cart_List.size()}</span></a>
                         </li>
+                       <!------ cart_List<
+                            if(emailAddres != null){
+                        %>---->
                         <li class="nav-item">
                             <a class="nav-link active" href="order.jsp">Orders</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="LogoutServlet.do">Logout</a>
                         </li>
+                        <!------%<
+                            }
+                        %>----->
                     </ul>
                 </div>
             </div>

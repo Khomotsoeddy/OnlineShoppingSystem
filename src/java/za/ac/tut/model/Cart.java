@@ -9,13 +9,13 @@ package za.ac.tut.model;
  * @author Asus
  */
 public class Cart extends Products{
-    
     private int quantity;
 
     public Cart() {
     }
 
-    public Cart(int quantity) {
+    public Cart(int productId, String name, String category, double price, String image,int quantity) {
+        super(productId,name,category,price,image);
         this.quantity = quantity;
     }
 
@@ -29,9 +29,10 @@ public class Cart extends Products{
 
     @Override
     public String toString() {
-        return "Cart{" + "quantity=" + quantity + '}';
+        return super.toString()+"Cart{" + "quantity=" + quantity + '}';
     }
-    
+
+ 
     
     
 }

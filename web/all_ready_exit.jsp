@@ -4,6 +4,8 @@
     Author     : Asus
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="za.ac.tut.model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +13,12 @@
         <%@include file="include/header.jsp"%>
     </head>
     <body>
+        <%
+            ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
+            if (cart_List != null) {
+                request.setAttribute("cart_List", cart_List);
+            }
+        %>
         <%@include file="include/navbar.jsp"%>
         <h5>Item already exit in cart page. Click <a href="cart.jsp">here to go</a> to cart page</h5>
         
