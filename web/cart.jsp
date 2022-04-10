@@ -22,10 +22,12 @@
     
     ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
     double totalPrice =0;
+    int totalQuantity = 0;
     ProductsProcessoor pp = new ProductsProcessoor();
         List<Cart> cartProduct= null;
     if (cart_List != null) {
         cartProduct = pp.getCartProducts(cart_List);
+        totalQuantity = pp.getTotalQuantity(cart_List);
         totalPrice = pp.getTotalPrice(cart_List);
         request.setAttribute("cart_List", cart_List);
         request.setAttribute("totalPrice", totalPrice);
@@ -110,7 +112,7 @@
                     </tr>
                     <tr>
                         <td>
-                            17
+                            <%=totalQuantity%>
                         </td>
                         <td>
                             <!--------{ (totalPrice>0)?totalPrice:0.0 }--------->

@@ -25,7 +25,7 @@ public class ProductsProcessoor {
         row.setProductId(100);
         row.setName("product_name");
         row.setImage("buy-1.jpg");
-        row.setPrice(176);
+        row.setPrice(176.34);
         row.setCategory("category");
 
         products.add(row);
@@ -46,7 +46,7 @@ public class ProductsProcessoor {
                     row.setProductId(100);
                     row.setName("product_name");
                     row.setImage("buy-1.jpg");
-                    row.setPrice(176);
+                    row.setPrice(176.34);
                     row.setCategory("category");
                     row.setQuantity(items.getQuantity());
                     
@@ -70,7 +70,7 @@ public class ProductsProcessoor {
                     //while(rs.next()){
                     //sum =+ rs.getDouble("product_price) * c.getQuantity();
                     //}
-                    c.setPrice(179);
+                    c.setPrice(176.34);
                     sum = c.getPrice() * c.getQuantity();
 
                 }
@@ -81,5 +81,26 @@ public class ProductsProcessoor {
         }
 
         return sum;
+    }
+    public int getTotalQuantity(ArrayList<Cart> cartList){
+        int totalQuantity = 0;
+        try {
+            if (cartList.size() > 0) {
+                for (Cart c : cartList) {
+                    //select price where product_id = c.getProductId()
+
+                    //while(rs.next()){
+                    //sum =+ rs.getDouble("product_price) * c.getQuantity();
+                    //}
+                    
+                    totalQuantity += c.getQuantity();
+
+                }
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return totalQuantity;
     }
 }
