@@ -16,10 +16,6 @@
     </head>
     <body>
         <%
-            Customer emailAddress = (Customer) request.getSession().getAttribute("emailAddress");
-            if (emailAddress != null) {
-                request.setAttribute("emailAddress", emailAddress);
-            }
             ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
             if (cart_List != null) {
                 request.setAttribute("cart_List", cart_List);

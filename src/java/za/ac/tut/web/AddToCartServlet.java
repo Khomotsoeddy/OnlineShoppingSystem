@@ -33,33 +33,37 @@ public class AddToCartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         ArrayList<Cart> cartList = new ArrayList<>();
 
-        Integer id = Integer.parseInt(request.getParameter("id"));
-        Cart ct = new Cart();
-        ct.setProductId(id);
-        ct.setQuantity(1);
+        if (session.getAttribute("emailAddress") != null) {
+            Integer id = Integer.parseInt(request.getParameter("id"));
+            Cart ct = new Cart();
+            ct.setProductId(id);
+            ct.setQuantity(1);
 
-        HttpSession session = request.getSession();
-        ArrayList<Cart> cart_List = (ArrayList) session.getAttribute("Cart-List");
+            ArrayList<Cart> cart_List = (ArrayList) session.getAttribute("Cart-List");
 
-        if (cart_List == null) {
-            cartList.add(ct);
-            session.setAttribute("Cart-List", cartList);
-            response.sendRedirect("products.jsp");
-        } else {
-            boolean exit = false;
-            cartList = cart_List;
-            for (Cart c : cart_List) {
-                if (c.getProductId() == id) {
-                    exit = true;
-                    response.sendRedirect("all_ready_exit.jsp");
+            if (cart_List == null) {
+                cartList.add(ct);
+                session.setAttribute("Cart-List", cartList);
+                response.sendRedirect("products.jsp");
+            } else {
+                boolean exit = false;
+                cartList = cart_List;
+                for (Cart c : cart_List) {
+                    if (c.getProductId() == id) {
+                        exit = true;
+                        response.sendRedirect("all_ready_exit.jsp");
+                    }
+                }
+                if (!exit) {
+                    cartList.add(ct);
+                    response.sendRedirect("products.jsp");
                 }
             }
-            if (!exit) {
-                cartList.add(ct);
-                response.sendRedirect("products.jsp");
-            }
+        }else{
+            response.sendRedirect("login.jsp");
         }
     }
 }

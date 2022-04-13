@@ -4,7 +4,7 @@
     Author     : Asus
 --%>
 
-<%@page import="za.ac.tut.model.Customer"%>
+<%--@page import="za.ac.tut.model.Customer"--%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
 <%@page import="java.util.List"%>
@@ -19,11 +19,20 @@
         <title>All Product Page</title>
     </head>
     <body>
-        <%
-            Customer emailAddress = (Customer) request.getSession().getAttribute("emailAddress");
+        <%--
+            String emailAddress = (String) request.getSession().getAttribute("emailAddress");
             if (emailAddress != null) {
                 request.setAttribute("emailAddress", emailAddress);
             }
+            ProductsProcessoor pp = new ProductsProcessoor();
+            List<Products> listOfProducts = pp.getAllProducts();
+
+            ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
+            if (cart_List != null) {
+                request.setAttribute("cart_List", cart_List);
+            }
+        --%>
+        <%
             ProductsProcessoor pp = new ProductsProcessoor();
             List<Products> listOfProducts = pp.getAllProducts();
 

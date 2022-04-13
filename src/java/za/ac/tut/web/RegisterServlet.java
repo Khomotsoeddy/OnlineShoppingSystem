@@ -5,13 +5,13 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.businness.CustomerNumberProcessor;
 import za.ac.tut.model.Customer;
+//import za.ac.tut.model.Customer;
 
 /**
  *

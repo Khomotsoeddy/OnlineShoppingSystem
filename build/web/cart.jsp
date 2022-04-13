@@ -9,13 +9,12 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
-<%@page import="za.ac.tut.model.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
     DecimalFormat df = new DecimalFormat("#.##");
     request.setAttribute("df", df);
-    Customer emailAddress = (Customer) request.getSession().getAttribute("emailAddress");
+    String emailAddress = (String) request.getSession().getAttribute("emailAddress");
     if (emailAddress != null) {
         request.setAttribute("emailAddress", emailAddress);
     }
