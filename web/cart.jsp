@@ -14,10 +14,10 @@
 <%
     DecimalFormat df = new DecimalFormat("#.##");
     request.setAttribute("df", df);
-    String emailAddress = (String) request.getSession().getAttribute("emailAddress");
-    if (emailAddress != null) {
-        request.setAttribute("emailAddress", emailAddress);
-    }
+    //String emailAddress = (String) request.getSession().getAttribute("emailAddress");
+    //if (emailAddress != null) {
+      //  request.setAttribute("emailAddress", emailAddress);
+    //}
     
     ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
     double totalPrice =0;
