@@ -20,6 +20,18 @@
         <servlet-name>QuantityEncrDecrServlet</servlet-name>
         <servlet-class>za.ac.tut.web.QuantityEncrDecrServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RemoveItemServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.RemoveItemServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuyNowServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.BuyNowServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.CheckoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet.do</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>QuantityEncrDecrServlet</servlet-name>
         <url-pattern>/QuantityEncrDecrServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveItemServlet</servlet-name>
+        <url-pattern>/RemoveItemServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyNowServlet</servlet-name>
+        <url-pattern>/BuyNowServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/CheckoutServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

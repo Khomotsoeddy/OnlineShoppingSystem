@@ -62,7 +62,7 @@
                             <div>
                                 <p><%=c.getName()%></p>
                                 <small>R<%=c.getPrice()%></small><br>
-                                <a href="#">Remove</a>
+                                <a href="RemoveItemServlet.do?id=<%=c.getProductId()%>">Remove</a>
                             </div>
                         </div>
                     </td>
@@ -121,8 +121,9 @@
                 </table>
 
             </div>
-            <a class="butn" href="#">CheckOut &#8594;</a>
+            <a class="butn" href="CheckoutServlet.do">CheckOut &#8594;</a>
         </div>
         <%@include file="include/footer.jsp"%>
+        <%@include file="include/footer1.jsp"%>
     </body>
 </html>

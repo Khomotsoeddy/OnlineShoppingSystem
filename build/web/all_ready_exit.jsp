@@ -23,5 +23,6 @@
         <h5>Item already exit in cart page. Click <a href="cart.jsp">here to go</a> to cart page</h5>
         
         <%@include file="include/footer.jsp"%>
+        <%@include file="include/footer1.jsp"%>
     </body>
 </html>

@@ -24,5 +24,6 @@
         
         <!-----------js for footer-------------------->
         <%@include file="include/footer.jsp"%>
+        <%@include file="include/footer1.jsp"%>
     </body>
 </html>

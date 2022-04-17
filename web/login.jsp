@@ -60,6 +60,7 @@
         </div>
         <!-----------js for footer-------------------->
         <%@include file="include/footer.jsp"%>
+        <%@include file="include/footer1.jsp"%>
         <!-----------js for change form-------------->
         <script>
             var loginForm = document.getElementById("login_form");

@@ -14,13 +14,8 @@
         <title>Order Page</title>
     </head>
     <body>
-        <%
-            ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
-            if (cart_List != null) {
-                request.setAttribute("cart_List", cart_List);
-            }
-        %>
         <%@include file="include/navbar.jsp"%>
         <%@include file="include/footer.jsp"%>
+        <%@include file="include/footer1.jsp"%>
     </body>
 </html>

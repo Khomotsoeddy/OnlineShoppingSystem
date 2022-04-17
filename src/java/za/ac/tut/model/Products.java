@@ -8,7 +8,7 @@ package za.ac.tut.model;
  *
  * @author Asus
  */
-public class Products {
+public class Products extends Customer{
     private int productId;
     private String name;
     private String category;

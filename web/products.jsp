@@ -60,7 +60,7 @@
                             <h6 class="category">Category: <%=product.getCategory()%></h6>
                             <div class="mt-3 d-flex justify-content-between">
                                 <a href="AddToCartServlet.do?id=<%=product.getProductId()%>" class="btn btn-dark">Add To Cart</a>
-                                <a href="#" class="btn btn-primary">Buy Now</a>
+                                <a href="BuyNowServlet.do?id=<%=product.getProductId()%>" class="btn btn-primary">Buy Now</a>
                             </div>
 
                         </div>
@@ -73,5 +73,6 @@
         </div>
         <!-----------js for footer-----?id=//product.getProductId()%>"--------------->
         <%@include file="include/footer.jsp"%>
+        <%@include file="include/footer1.jsp"%>
     </body>
 </html>
