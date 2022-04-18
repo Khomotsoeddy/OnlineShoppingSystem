@@ -5,12 +5,18 @@
         <group>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/include/navbar.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/cart.jsp</file>
-            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/order.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/CheckoutServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/products.jsp</file>
-            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/LoginServlet.java</file>
-            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/CustomerNumberProcessor.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/include/footer1.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/index.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/login.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/all_ready_exit.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/order.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/include/header.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/RemoveItemServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/include/footer.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/CustomerNumberProcessor.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/BuyNowServlet.java</file>
         </group>
     </open-files>
 </project-private>
