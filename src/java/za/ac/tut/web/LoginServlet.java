@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
                 
         session.setAttribute("emailAddress",emailAddress);
         
-        RequestDispatcher disp = request.getRequestDispatcher("products.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("order_tracking.jsp");
         disp.forward(request, response);
         
         

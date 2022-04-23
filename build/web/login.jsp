@@ -31,8 +31,8 @@
                     <div class="col_2">
                         <div class="form_container">
                             <div class="form_btn">
-                                <span onclick="login()">Login</span>
-                                <span onclick="register()">Register</span>
+                                <span onclick="login()">Register</span>
+                                <span onclick="register()">Login</span>
                                 <hr id="form_indicator">
                             </div>
                             <form action="LoginServlet.do" method="post" id="login_form">

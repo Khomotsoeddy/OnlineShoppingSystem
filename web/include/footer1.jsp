@@ -12,9 +12,9 @@
                 </div>
             </div>
             <div class="footer_col_2">
-                <img src="./product_images/logo_icon.jpeg" width="150" height="100"/>
+                <h1>POWER</h1>
                 <p>
-                    Our Purpose Is To Sustainably Make The Pleasure And Benefits Of Sports Accessible To Many.
+                    Our Purpose Is To Sustainably Make The<br> Pleasure<br> And<br> Benefits<br> Of Sports Accessible To Many.
                 </p>
             </div>
             <div class="footer_col_3">
