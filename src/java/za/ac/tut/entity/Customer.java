@@ -2,14 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package za.ac.tut.model;
+package za.ac.tut.entity;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Asus
  */
-public class Customer {
-    private String customer_id;
+@Entity
+@Table(name="Customer_tbl")
+public class Customer implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    private Long id;
     private String fname;
     private String lname;
     private String phoneNumber;
@@ -24,26 +36,13 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String customer_id, String fname, String lname, String phoneNumber, String email, String street, String city, String state, String zip_code,String password, String role) {
-        this.customer_id = customer_id;
-        this.fname = fname;
-        this.lname = lname;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.zip_code = zip_code;
-        this.password = password;
-        this.role = role;
+    
+    public Long getId() {
+        return id;
     }
 
-    public String getCustomer_id() {
-        return customer_id;
-    }
-
-    public void setCustomer_id(String customer_id) {
-        this.customer_id = customer_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFname() {
@@ -126,9 +125,6 @@ public class Customer {
         this.role = role;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" + "customer_id=" + customer_id + ", fname=" + fname + ", lname=" + lname + ", phoneNumber=" + phoneNumber + ", email=" + email + ", street=" + street + ", city=" + city + ", state=" + state + ", zip_code=" + zip_code +", password=" + password + ", role=" + role + '}';
-    }
+    
     
 }

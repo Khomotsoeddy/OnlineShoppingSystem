@@ -12,7 +12,7 @@
     <head>
         <%@include file="include/header.jsp"%>
     </head>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%
             ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
             if (cart_List != null) {

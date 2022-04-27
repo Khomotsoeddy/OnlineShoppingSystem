@@ -13,7 +13,7 @@
         <%@include file="include/header.jsp"%>
         <title>Order Page</title>
     </head>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%@include file="include/navbar.jsp"%>
         <%@include file="include/footer.jsp"%>
         <%@include file="include/footer1.jsp"%>

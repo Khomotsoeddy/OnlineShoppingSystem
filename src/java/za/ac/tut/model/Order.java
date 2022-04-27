@@ -8,16 +8,16 @@ package za.ac.tut.model;
  *
  * @author Asus
  */
-public class Order extends Products{
+public class Order {
     private String orderId;
-    private String customer_id;
+    private int customer_id;
     private String quanity;
     private String date;
 
     public Order() {
     }
 
-    public Order(String orderId, String customer_id, String quanity, String date) {
+    public Order(String orderId, int customer_id, String quanity, String date) {
         this.orderId = orderId;
         this.customer_id = customer_id;
         this.quanity = quanity;
@@ -32,11 +32,11 @@ public class Order extends Products{
         this.orderId = orderId;
     }
 
-    public String getCustomer_id() {
+    public int getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(String customer_id) {
+    public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;
     }
 

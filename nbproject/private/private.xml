@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/include/navbar.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/CustomerFacade.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/RegistrationServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/entity/Customer.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/ProductFacade.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/products.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/entity/Product.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/web/login.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/ProductFacadeLocal.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/AbstractFacade.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/ProductServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/web/RegisterServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/model/Customer.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShoppingSystem/src/java/za/ac/tut/businness/CustomerFacadeLocal.java</file>
+        </group>
     </open-files>
 </project-private>

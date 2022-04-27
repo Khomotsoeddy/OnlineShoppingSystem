@@ -11,7 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import za.ac.tut.model.Cart;
+import javax.servlet.http.HttpSession;
+import za.ac.tut.model.Store;
 
 /**
  *
@@ -30,15 +31,17 @@ public class QuantityEncrDecrServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        
         
         String action = request.getParameter("action");
         int id = Integer.parseInt(request.getParameter("id"));
         
-        ArrayList<Cart> cart_List = (ArrayList<Cart>) request.getSession().getAttribute("Cart-List");
+        ArrayList<Store> cart_List = (ArrayList<Store>) session.getAttribute("cart-products");
         
         if(action!=null && id>0){
             if(action.equals("inc")){
-                for(Cart c : cart_List){
+                for(Store c : cart_List){
                     if(c.getProductId() == id){
                         int quantity = c.getQuantity();
                         quantity++;
@@ -48,7 +51,7 @@ public class QuantityEncrDecrServlet extends HttpServlet {
                 }
             }
             if(action.equals("dec")){
-                for(Cart c : cart_List){
+                for(Store c : cart_List){
                     if(c.getProductId() == id && c.getQuantity() >1){
                         int quantity = c.getQuantity();
                         quantity--;

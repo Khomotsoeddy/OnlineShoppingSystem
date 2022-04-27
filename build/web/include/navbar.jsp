@@ -11,7 +11,7 @@
                     <a class="nav-link" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="products.jsp">Products</a>
+                    <a class="nav-link" href="ProductServlet.do">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="login.jsp">Login</a>
@@ -25,7 +25,7 @@
                 %>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger px-1">${cart_List.size()}</span></a>
+                    <a class="nav-link" href="LoadCartServlet.do">Cart<span class="badge badge-danger px-1">${cart_List.size()}</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="order.jsp">Orders</a>

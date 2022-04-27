@@ -5,13 +5,13 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.model.Cart;
+import za.ac.tut.model.Store;
 
 /**
  *
@@ -35,9 +35,9 @@ public class RemoveItemServlet extends HttpServlet {
         String productId = request.getParameter("id");
     
         if(productId != null){
-            ArrayList<Cart> cartList = (ArrayList<Cart>) request.getSession().getAttribute("Cart-List");
+            ArrayList<Store> cartList = (ArrayList<Store>) request.getSession().getAttribute("cart-products");
             if(cartList != null){
-                for(Cart c:cartList){
+                for(Store c:cartList){
                     if(c.getProductId() == Integer.parseInt(productId)){
                         cartList.remove(cartList.indexOf(c));
                         break;

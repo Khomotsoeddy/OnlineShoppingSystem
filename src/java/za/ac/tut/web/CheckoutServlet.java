@@ -5,7 +5,6 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,7 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import za.ac.tut.model.Cart;
+import za.ac.tut.model.Store;
 
 /**
  *
@@ -26,20 +25,19 @@ public class CheckoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("I'm here");
-        ArrayList<Cart> cartList = (ArrayList<Cart>) request.getSession().getAttribute("Cart-List");
+        ArrayList<Store> cartList = (ArrayList<Store>) request.getSession().getAttribute("cart-products");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         dateFormat.format(date);
         
         if(cartList != null){
-            for(Cart c:cartList){
+            for(Store c:cartList){
                 
             }
             cartList.clear();
-            response.sendRedirect("order.jsp");
-        }else{
-            response.sendRedirect("products.jsp");
-        }
+            response.sendRedirect("shipping_address.jsp");
+        }else
+            response.sendRedirect("nothingincart.jsp");
     }
 
     @Override

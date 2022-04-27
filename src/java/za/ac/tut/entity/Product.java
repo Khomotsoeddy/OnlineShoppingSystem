@@ -2,28 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package za.ac.tut.model;
+package za.ac.tut.entity;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Asus
  */
-public class Products extends Customer{
+@Entity
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
     private int productId;
-    private String name;
+    private String productName;
     private String category;
     private double price;
     private String image;
 
-    public Products() {
-    }
-
-    public Products(int productId, String name, String category, double price, String image) {
-        this.productId = productId;
-        this.name = name;
-        this.category = category;
-        this.price = price;
-        this.image = image;
+    public Product() {
     }
 
     public int getProductId() {
@@ -35,11 +35,11 @@ public class Products extends Customer{
     }
 
     public String getName() {
-        return name;
+        return productName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String productName) {
+        this.productName = productName;
     }
 
     public String getCategory() {
@@ -65,12 +65,5 @@ public class Products extends Customer{
     public void setImage(String image) {
         this.image = image;
     }
-
-    @Override
-    public String toString() {
-        return "Products{" + "productId=" + productId + ", name=" + name + ", category=" + category + ", price=" + price + ", image=" + image + '}';
-    }
-    
-    
     
 }

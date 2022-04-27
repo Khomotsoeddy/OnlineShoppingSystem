@@ -13,7 +13,7 @@
         <%@include file="include/header.jsp"%>
         <title>Welcome To Our Online Shop</title>
     </head>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%
             ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
             if (cart_List != null) {

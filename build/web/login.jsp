@@ -3,8 +3,6 @@
     Created on : 09 Apr 2022, 02:20:41
     Author     : Asus
 --%>
-
-<%@page import="za.ac.tut.model.Customer"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +12,7 @@
         <%@include file="include/header.jsp"%>
         <title>Login Page | Power Gym</title>
     </head>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%
             ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
             if (cart_List != null) {
@@ -35,13 +33,13 @@
                                 <span onclick="register()">Login</span>
                                 <hr id="form_indicator">
                             </div>
-                            <form action="LoginServlet.do" method="post" id="login_form">
+                            <form action="LoginServlet.do" method="post" id="login_form" class="form_container">
                                 <input type="email" placeholder="Email Address" name="emailAddress"/>
                                 <input type="password" placeholder="Password" name="password"/>
                                 <input type="submit" value="Login" class="butn"/>
                                 <a href="">Forget Password</a>
                             </form>
-                            <form action="RegisterServlet.do" method="post" id="registration_form">
+                            <form action="RegistrationServlet.do" method="post" id="registration_form" class="form_container">
                                 <input type="text" placeholder="Firstname" name="firstName"/>
                                 <input type="text" placeholder="Lastname" name="lastName"/>
                                 <input type="number" placeholder="Phone number" name="phoneNumber"/>

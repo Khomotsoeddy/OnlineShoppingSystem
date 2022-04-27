@@ -278,6 +278,11 @@ select:focus{
     background: #ff523b;
     color: #fff;
 }
+
+.col-md-3 .card .card-img-top{
+    width: 150px;
+    height: 150px;
+}
 /*-------------media query for less than 600px--------------*/
 @media only screen and (max-width:600px){
     .row{
@@ -520,6 +525,65 @@ form a{
 }
 .order h1{
     text-transform: uppercase;
+}
+/*------------checkout-------------------------*/
+
+.track{
+    background: radial-gradient(#fff,#ffd6d6);
+    margin-top: 50px;
+}
+.checkout_progress{
+    margin: auto;
+}
+.checkout_progress ul{
+    text-align: center;
+}
+.checkout_progress ul li{
+    display: inline-block;
+    width: 200px;
+    position: relative;
+}
+.checkout_progress ul li .fa{
+    background: #ccc;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    border-radius: 50%;
+    margin-bottom:  5px;
+}
+.checkout_progress ul li .fa::after{
+    content: '';
+    background: #ccc;
+    height: 5px;
+    width: 205px;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+.address_container{
+    height: 370px;
+    width: 300px;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.card_container{
+    height: 370px;
+    width: 300px;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/*--------------upload image--------------------*/
+.upload_img{
+    margin: auto;
+    background: #fff;
 }
 /*-------------media query for menu-------------*/
 

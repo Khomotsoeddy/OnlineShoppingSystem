@@ -4,23 +4,29 @@
  */
 package za.ac.tut.model;
 
+import za.ac.tut.entity.Product;
+
 /**
  *
  * @author Asus
  */
-public class Cart extends Products{
+public class Cart extends Product{
     private int quantity;
+    private Product product;
 
     public Cart() {
     }
 
-    public Cart(int productId, String name, String category, double price, String image,int quantity) {
-        super(productId,name,category,price,image);
-        this.quantity = quantity;
-    }
-
     public int getQuantity() {
         return quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public void setQuantity(int quantity) {
@@ -31,8 +37,4 @@ public class Cart extends Products{
     public String toString() {
         return super.toString()+"Cart{" + "quantity=" + quantity + '}';
     }
-
- 
-    
-    
 }

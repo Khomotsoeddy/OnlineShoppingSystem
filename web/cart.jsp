@@ -4,6 +4,8 @@
     Author     : Asus
 --%>
 
+<%@page import="za.ac.tut.model.Store"%>
+<%@page import="za.ac.tut.entity.Product"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="za.ac.tut.businness.ProductsProcessoor"%>
 <%@page import="java.util.List"%>
@@ -16,29 +18,28 @@
     request.setAttribute("df", df);
     //String emailAddress = (String) request.getSession().getAttribute("emailAddress");
     //if (emailAddress != null) {
-      //  request.setAttribute("emailAddress", emailAddress);
+    //  request.setAttribute("emailAddress", emailAddress);
     //}
-    
+    ArrayList<Store> products = (ArrayList<Store>) session.getAttribute("cart-products");
     ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
-    double totalPrice =0;
-    int totalQuantity = 0;
+    Double totalPrice =0.0;
+    Integer totalQuantity =0;
     ProductsProcessoor pp = new ProductsProcessoor();
-        List<Cart> cartProduct= null;
-    if (cart_List != null) {
-        cartProduct = pp.getCartProducts(cart_List);
-        totalQuantity = pp.getTotalQuantity(cart_List);
-        totalPrice = pp.getTotalPrice(cart_List);
+    if (products != null) {
+        //cartProduct = (List<Cart>)session.getAttribute(cart_List);
+        totalQuantity = pp.getTotalQuantity(products);
+        totalPrice = pp.getTotalPrice(products);
         request.setAttribute("cart_List", cart_List);
-        request.setAttribute("totalPrice", totalPrice);
+        //request.setAttribute("totalPrice", totalPrice);
     }
-    
+
 %>
 <html>
     <head>
         <%@include file="include/header.jsp"%>
         <title>Cart Page</title>
     </head>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%@include file="include/navbar.jsp"%>
         <div class="small_container cart_page">
             <table>
@@ -49,20 +50,19 @@
                     <th>Subtotal</th>
 
                 </tr>
-                <%
-                    if (cart_List != null) {
-                        for (Cart c : cartProduct) {
+                <%                    if (cart_List != null) {
+                        for (Store p : products) {
                 %>
 
 
                 <tr>
                     <td>
                         <div class="cart_info">
-                            <img src="./product_images/<%=c.getImage()%>"/>
+                            <img src="./product_images/<%=p.getImage()%>"/>
                             <div>
-                                <p><%=c.getName()%></p>
-                                <small>R<%=c.getPrice()%></small><br>
-                                <a href="RemoveItemServlet.do?id=<%=c.getProductId()%>">Remove</a>
+                                <p><%=p.getName()%></p>
+                                <small>R<%=p.getPrice()%></small><br>
+                                <a href="RemoveItemServlet.do?id=<%=p.getProductId()%>">Remove</a>
                             </div>
                         </div>
                     </td>
@@ -76,23 +76,25 @@
                     </td>
                     <td>
                         <form action="" method="post" class="form-inline">
-                            <input type="hidden"  name="id" value="<%=c.getProductId()%>" class="form-input">
+                            <input type="hidden"  name="id" value="<%=p.getProductId()%>" class="form-input">
                             <div class="form-group d-flex justify-content-between">
-                                <a class="btn btn-sm btn-decre" href="QuantityEncrDecrServlet.do?action=dec&id=<%=c.getProductId()%>">
+                                <a class="btn btn-sm btn-decre" href="QuantityEncrDecrServlet.do?action=dec&id=<%=p.getProductId()%>">
                                     <i class="fas fa-minus-square"></i>
                                 </a>
-                                <input type="text" name="quantity" value="<%=c.getQuantity()%>" readonly>
+                                <input type="text" name="quantity" value="<%=p.getQuantity()%>" readonly>
 
-                                <a class="btn btn-sm btn-incre" href="QuantityEncrDecrServlet.do?action=inc&id=<%=c.getProductId()%>" >
+                                <a class="btn btn-sm btn-incre" href="QuantityEncrDecrServlet.do?action=inc&id=<%=p.getProductId()%>" >
                                     <i class="fas fa-plus-square"></i>
                                 </a>
                             </div>
                         </form>
                     </td>
-                    <td><%=df.format(c.getPrice() * c.getQuantity())%></td>
+                    <td><%=df.format(p.getPrice() * p.getQuantity())%></td>
                 </tr>
 
                 <%
+                            //totalQuantity =+ p.getQuantity();  //}
+                            //totalPrice =+ p.getPrice() * p.getQuantity();
                         }
                     }
                 %>
@@ -114,7 +116,6 @@
                             <%=totalQuantity%>
                         </td>
                         <td>
-                            <!--------{ (totalPrice>0)?totalPrice:0.0 }--------->
                             <%=totalPrice%>
                         </td>
                     </tr>

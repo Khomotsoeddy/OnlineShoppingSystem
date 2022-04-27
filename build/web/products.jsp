@@ -4,11 +4,10 @@
     Author     : Asus
 --%>
 
-<%--@page import="za.ac.tut.model.Customer"--%>
+<%@page import="za.ac.tut.entity.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
 <%@page import="java.util.List"%>
-<%@page import="za.ac.tut.model.Products"%>
 <%@page import="za.ac.tut.businness.ProductsProcessoor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,28 +17,9 @@
         <%@include file="include/header.jsp"%>
         <title>All Product Page</title>
     </head>
-    <body>
-        <%--
-            String emailAddress = (String) request.getSession().getAttribute("emailAddress");
-            if (emailAddress != null) {
-                request.setAttribute("emailAddress", emailAddress);
-            }
-            ProductsProcessoor pp = new ProductsProcessoor();
-            List<Products> listOfProducts = pp.getAllProducts();
-
-            ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
-            if (cart_List != null) {
-                request.setAttribute("cart_List", cart_List);
-            }
-        --%>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%
-            ProductsProcessoor pp = new ProductsProcessoor();
-            List<Products> listOfProducts = pp.getAllProducts();
-
-            ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
-            if (cart_List != null) {
-                request.setAttribute("cart_List", cart_List);
-            }
+            List<Product> products = (List<Product>)session.getAttribute("products");
         %>
         <%@include file="include/navbar.jsp"%>
 
@@ -49,18 +29,18 @@
             </div>
             <div class="row">
                 <%
-                    for (Products product : listOfProducts) {
+                    for (Product p : products) {
                 %>
                 <div class="col-md-3 my-3">
                     <div class="card w-100" style="width: 18rem;">
-                        <img class="card-img-top" src="./product_images/<%=product.getImage()%>" alt="Card image cap">
+                        <img class="card-img-top" src="./product_images/<%=p.getImage()%>" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title"><%=product.getName()%></h5>
-                            <h6 class="price">Price R<%=product.getPrice()%></h6>
-                            <h6 class="category">Category: <%=product.getCategory()%></h6>
+                            <h5 class="card-title"><%=p.getName()%></h5>
+                            <h6 class="price">Price R<%=p.getPrice()%></h6>
+                            <h6 class="category">Category: <%=p.getCategory()%></h6>
                             <div class="mt-3 d-flex justify-content-between">
-                                <a href="AddToCartServlet.do?id=<%=product.getProductId()%>" class="btn btn-dark">Add To Cart</a>
-                                <a href="BuyNowServlet.do?id=<%=product.getProductId()%>" class="btn btn-primary">Buy Now</a>
+                                <a href="AddToCartServlet.do?id=<%=p.getProductId()%>" class="btn btn-dark">Add To Cart</a>
+                                <a href="BuyNowServlet.do?id=<%=p.getProductId()%>" class="btn btn-primary">Buy Now</a>
                             </div>
 
                         </div>

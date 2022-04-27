@@ -11,7 +11,7 @@
         <%@include file="include/header.jsp"%>
         <title>Upload Products</title>
     </head>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
         <!--------------upload a picture---------------->
         <div class="upload_img">
             <form action="UploadImageServlet.do" method="POST" enctype="multipart/form-data">
