@@ -4,6 +4,7 @@
     Author     : Asus
 --%>
 
+<%@page import="za.ac.tut.model.Store"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,15 +15,13 @@
     </head>
     <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%
-            ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
+            ArrayList<Store> cart_List = (ArrayList<Store>) session.getAttribute("cart-products");
             if (cart_List != null) {
-                request.setAttribute("cart_List", cart_List);
+                request.setAttribute("cart-products", cart_List);
             }
         %>
-        <%@include file="include/navbar.jsp"%>
-        <h5>Item already exit in cart page. Click <a href="cart.jsp">here to go</a> to cart page</h5>
         
-        <%@include file="include/footer.jsp"%>
-        <%@include file="include/footer1.jsp"%>
+        <h5>Item already exit in cart page. Click <a href="LoadCartServlet.do">here to go</a> to cart page</h5>
+        
     </body>
 </html>

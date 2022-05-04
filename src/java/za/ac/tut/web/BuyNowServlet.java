@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import za.ac.tut.model.Order;
+
 
 /**
  *
@@ -30,8 +30,8 @@ public class BuyNowServlet extends HttpServlet {
         String emailAddress = (String) request.getSession().getAttribute("emailAddress");
         
         if(emailAddress != null){
-            String productId = request.getParameter("id");
-            Integer quantity = Integer.parseInt(request.getParameter("quantity"));
+            Long productId = Long.parseLong(request.getParameter("id"));
+            Integer quantity = 0;//Integer.parseInt(request.getParameter("quantity"));
             
             if(quantity <= 0){
                 quantity=1;

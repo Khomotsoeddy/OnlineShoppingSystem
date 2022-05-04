@@ -8,7 +8,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
 <%@page import="java.util.List"%>
-<%@page import="za.ac.tut.businness.ProductsProcessoor"%>
+<%@page import="za.ac.tut.business.ProductsProcessoor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 

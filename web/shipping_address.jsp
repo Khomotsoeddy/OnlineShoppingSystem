@@ -27,7 +27,7 @@
                 </ul>
                 <div class="address_container">
                     <h1>Address Detail</h1>
-                    <form action="ShippingAddressServlet.do" method="post">
+                    <form action="AddressServlet.do" method="post">
                         <input type="text" name="streetName" placeholder="street name"/>
                         <input type="text" name="suburb" placeholder="suburb"/>
                         <input type="text" name="town" placeholder="town"/>

@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import za.ac.tut.model.Cart;
 import za.ac.tut.model.Store;
 
@@ -32,21 +33,23 @@ public class RemoveItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String productId = request.getParameter("id");
     
         if(productId != null){
-            ArrayList<Store> cartList = (ArrayList<Store>) request.getSession().getAttribute("cart-products");
+            ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("Cart-List");
             if(cartList != null){
-                for(Store c:cartList){
+                for(Cart c:cartList){
                     if(c.getProductId() == Integer.parseInt(productId)){
-                        cartList.remove(cartList.indexOf(c));
+                        cartList.remove(c);
                         break;
                     }
                 }  
-                response.sendRedirect("cart.jsp");
+                session.setAttribute("Cart-List", cartList);
+                response.sendRedirect("LoadCartServlet.do");
             }
         }else{
-            response.sendRedirect("cart.jsp");
+            response.sendRedirect("LoadCartServlet.do");
         }
     }
 }

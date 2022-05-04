@@ -5,13 +5,13 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import za.ac.tut.model.Cart;
 import za.ac.tut.model.Store;
 
 /**
@@ -37,29 +37,29 @@ public class QuantityEncrDecrServlet extends HttpServlet {
         String action = request.getParameter("action");
         int id = Integer.parseInt(request.getParameter("id"));
         
-        ArrayList<Store> cart_List = (ArrayList<Store>) session.getAttribute("cart-products");
+        ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
         
         if(action!=null && id>0){
             if(action.equals("inc")){
-                for(Store c : cart_List){
+                for(Cart c : cart_List){
                     if(c.getProductId() == id){
                         int quantity = c.getQuantity();
                         quantity++;
                         c.setQuantity(quantity);
-                        response.sendRedirect("cart.jsp");
+                        response.sendRedirect("LoadCartServlet.do");
                     }
                 }
             }
             if(action.equals("dec")){
-                for(Store c : cart_List){
+                for(Cart c : cart_List){
                     if(c.getProductId() == id && c.getQuantity() >1){
                         int quantity = c.getQuantity();
                         quantity--;
                         c.setQuantity(quantity);
+                        response.sendRedirect("LoadCartServlet.do");
                         break;
                     }
                 }
-                response.sendRedirect("cart.jsp");
             }
         }else{
             response.sendRedirect("cart.jsp");

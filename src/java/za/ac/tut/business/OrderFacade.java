@@ -2,20 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package za.ac.tut.businness;
+package za.ac.tut.business;
 
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import za.ac.tut.entity.Product;
+import za.ac.tut.entity.Order;
 
 /**
  *
  * @author Asus
  */
 @Stateless
-public class ProductFacade extends AbstractFacade<Product> implements ProductFacadeLocal {
+public class OrderFacade extends AbstractFacade<Order> implements OrderFacadeLocal {
 
     @PersistenceContext(unitName = "OnlineShoppingSystemPU")
     private EntityManager em;
@@ -25,19 +24,21 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
         return em;
     }
 
-    public ProductFacade() {
-        super(Product.class);
+    public OrderFacade() {
+        super(Order.class);
     }
 
     @Override
-    public List <Product> listAllProduct() {
-        return findAll();
-    }
-
-    @Override
-    public Product findProduct(int productId) {
-        return find(productId);
-    }
     
+    public void createOrder(Order order) {
+        create(order);
+    }
+
+    @Override
+    public int generateOrderNo() {
+        int random = 9999 + (int)Math.floor(Math.random()*(99999 - 9999)+1);
+        
+        return random;
+    }
     
 }

@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package za.ac.tut.businness;
+package za.ac.tut.business;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import za.ac.tut.entity.Customer;
+import za.ac.tut.entity.Address;
 
 /**
  *
  * @author Asus
  */
 @Stateless
-public class CustomerFacade extends AbstractFacade<Customer> implements CustomerFacadeLocal {
+public class AddressFacade extends AbstractFacade<Address> implements AddressFacadeLocal {
 
     @PersistenceContext(unitName = "OnlineShoppingSystemPU")
     private EntityManager em;
@@ -24,20 +24,13 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
         return em;
     }
 
-    public CustomerFacade() {
-        super(Customer.class);
+    public AddressFacade() {
+        super(Address.class);
     }
 
     @Override
-    public void addCustomer(Customer customer) {
-        create(customer);
-    }
-
-    @Override
-    public int generateCustomerId() {
-        int random = 9999 + (int)Math.floor(Math.random()*(99999 - 9999)+1);
-        
-        return random;
+    public void createAddress(Address address) {
+        create(address);
     }
     
 }

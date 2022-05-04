@@ -33,10 +33,6 @@
         <servlet-class>za.ac.tut.web.UploadImageServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ShippingAddressServlet</servlet-name>
-        <servlet-class>za.ac.tut.web.ShippingAddressServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PurchasingServlet</servlet-name>
         <servlet-class>za.ac.tut.web.PurchasingServlet</servlet-class>
     </servlet>
@@ -51,6 +47,14 @@
     <servlet>
         <servlet-name>LoadCartServlet</servlet-name>
         <servlet-class>za.ac.tut.web.LoadCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddressServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.AddressServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.OrderServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -85,10 +89,6 @@
         <url-pattern>/UploadImageServlet.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ShippingAddressServlet</servlet-name>
-        <url-pattern>/ShippingAddressServlet.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>PurchasingServlet</servlet-name>
         <url-pattern>/PurchasingServlet.do</url-pattern>
     </servlet-mapping>
@@ -103,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>LoadCartServlet</servlet-name>
         <url-pattern>/LoadCartServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddressServlet</servlet-name>
+        <url-pattern>/AddressServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

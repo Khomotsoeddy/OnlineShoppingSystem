@@ -12,6 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import za.ac.tut.model.Cart;
 import za.ac.tut.model.Store;
 
 /**
@@ -24,8 +26,10 @@ public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("I'm here");
-        ArrayList<Store> cartList = (ArrayList<Store>) request.getSession().getAttribute("cart-products");
+        HttpSession session = request.getSession();
+        
+        ArrayList<Store> cartList = (ArrayList<Store>) session.getAttribute("cart-products");
+        ArrayList<Cart> cart_List = (ArrayList<Cart>) session.getAttribute("Cart-List");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         dateFormat.format(date);
@@ -34,7 +38,7 @@ public class CheckoutServlet extends HttpServlet {
             for(Store c:cartList){
                 
             }
-            cartList.clear();
+            cart_List.clear();
             response.sendRedirect("shipping_address.jsp");
         }else
             response.sendRedirect("nothingincart.jsp");

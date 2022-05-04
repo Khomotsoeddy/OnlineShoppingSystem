@@ -6,8 +6,6 @@ package za.ac.tut.entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,7 +14,7 @@ import javax.persistence.Table;
  * @author Asus
  */
 @Entity
-@Table(name="Customer_tbl")
+//@Table(name="Customer_tbl")
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -124,7 +122,4 @@ public class Customer implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
-
-    
-    
 }
