@@ -4,6 +4,10 @@
     Author     : Asus
 --%>
 
+<%@page import="za.ac.tut.model.Store"%>
+<%@page import="za.ac.tut.entity.Product"%>
+<%@page import="za.ac.tut.entity.Order"%>
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="za.ac.tut.model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,7 +19,10 @@
     </head>
     <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%@include file="include/navbar.jsp"%>
-
+        <%
+            List<Order> orders = (List<Order>) session.getAttribute("orders");
+            List<Product> products = (List<Product>)  session.getAttribute("products");
+        %>
         <div class="order_container">
             <table>
                 <tr>
@@ -25,22 +32,32 @@
                     <th>Total Price</th>
                     <th></th>
                 </tr>
+                <%
+                    if (!orders.isEmpty()) {
+                        for (Order o : orders) {
+                %>
                 <tr>
-                    <td>2345</td>
-                <td>
-                    <%                       
-                         for (int i = 0; i < 5; i++) {
-                    %>
-                    ertjhbd<br>
-                    <%
-                        }
-                    %>
-                </td>
+                    <td><%=o.getOrderNo()%></td>
+                    <td>
+                        <%
+                            //List<Integer> store = o.getStore();
+                            for (Product p : products) {
+                        %>
+                        <%=p.getName()%><br>
+                        <%
+                            }
+                        %>
+                    </td>
 
-                <td>123 street</td>
-                <td>R564</td>
-                <td><a class="butn" href="order_tracking.jsp">TRACK &#8594;</a></td>
+                    <td><%=o.getAddress().getStreetName()%></td>
+                    <td><%=o.getTotalPrice()%></td>
+
+                    <td><a class="butn" href="OrderTrackingServlet.do?id=<%=o.getOrderNo()%>">TRACK &#8594;</a></td>
                 </tr>
+                <%
+                        }
+                    }
+                %>
 
             </table>
 

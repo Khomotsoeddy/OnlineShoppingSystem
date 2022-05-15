@@ -25,6 +25,7 @@
         //cartProduct = (List<Cart>)session.getAttribute(cart_List);
         totalQuantity = pp.getTotalQuantity(products);
         totalPrice = pp.getTotalPrice(products);
+        
         session.setAttribute("cart-products", products);
         session.setAttribute("totalPrice", totalPrice);
     }
@@ -103,6 +104,7 @@
                         </td>
                         <td>
                             <%=totalPrice%>
+                            <%session.setAttribute("totalQuantity", totalQuantity);%>
                         </td>
                     </tr>
                 </table>

@@ -28,7 +28,7 @@
                     <a class="nav-link" href="LoadCartServlet.do">Cart<span class="badge badge-danger px-1">${cart_List.size()}</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="OrderServlet.do">Orders</a>
+                    <a class="nav-link active" href="LoadOrdersServlet.do">Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="LogoutServlet.do">Logout</a>

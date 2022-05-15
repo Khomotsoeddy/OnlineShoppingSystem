@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import za.ac.tut.entity.Address;
 import za.ac.tut.business.AddressFacadeLocal;
 
@@ -26,15 +27,21 @@ public class AddressServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        HttpSession session = request.getSession();
         String streetName = request.getParameter("streetName");
         String suburb = request.getParameter("suburb");
         String town = request.getParameter("town");
         String province = request.getParameter("province");
         String zipCode = request.getParameter("zipCode");
         
-        Address address = createNewAddress(streetName,suburb,town,province,zipCode);
+        session.setAttribute("town", town);
+        session.setAttribute("streetName", streetName);
+        session.setAttribute("suburb", suburb);
+        session.setAttribute("province", province);
+        session.setAttribute("zipCode", zipCode);
         
-        addressFacade.createAddress(address);
+        //Address address = createNewAddress(streetName,suburb,town,province,zipCode);
         
         response.sendRedirect("card_detail.jsp");
     }

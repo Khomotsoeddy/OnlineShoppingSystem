@@ -5,30 +5,43 @@
 package za.ac.tut.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import za.ac.tut.model.Store;
+import javax.persistence.Table;
 
 /**
  *
  * @author Asus
  */
 @Entity
+@Table(name= "orders")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     private int orderNo;
-    private List<Store> store;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name ="address_fk")
     private Address address;
     private String OrderedDate;
     private String expectedDate;
-    @OneToOne
-    private Customer customerNo;
+    private Long customerNo;
+    private double totalPrice;
+    private int quantity;
+    private String status;
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name="ordered_product")
+    @Column(name="products")
+    private List<Integer> products  = new ArrayList<>();
     
     
     public Order() {
@@ -42,12 +55,12 @@ public class Order implements Serializable {
         this.orderNo = orderNo;
     }
 
-    public List<Store> getStore() {
-        return store;
+    public List<Integer> getStore() {
+        return products;
     }
 
-    public void setStore(List<Store> store) {
-        this.store = store;
+    public void setStore(List<Integer> products) {
+        this.products = products;
     }
 
     public Address getAddress() {
@@ -74,13 +87,44 @@ public class Order implements Serializable {
         this.expectedDate = expectedDate;
     }
 
-    public Customer getCustomerNo() {
+    public Long getCustomerNo() {
         return customerNo;
     }
 
-    public void setCustomerNo(Customer customerNo) {
+    public void setCustomerNo(Long customerNo) {
         this.customerNo = customerNo;
     }
 
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+//    public List<Integer> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Integer> products) {
+//        this.products = products;
+//    }
     
 }

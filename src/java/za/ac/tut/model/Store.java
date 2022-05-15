@@ -8,7 +8,8 @@ package za.ac.tut.model;
  *
  * @author Asus
  */
-public class Store {
+public class Store{
+
     private int productId;
     private String name;
     private String image;
@@ -66,6 +67,4 @@ public class Store {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
-    
 }

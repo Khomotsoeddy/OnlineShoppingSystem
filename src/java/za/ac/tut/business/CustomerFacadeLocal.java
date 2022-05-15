@@ -15,8 +15,9 @@ import za.ac.tut.entity.Customer;
 @Local
 public interface CustomerFacadeLocal {
 
-    void addCustomer(Customer customer);
+    public void addCustomer(Customer customer);
 
-    int generateCustomerId();
+    public List<Customer> getCustomers();
     
+    int generateCustomerId();
 }

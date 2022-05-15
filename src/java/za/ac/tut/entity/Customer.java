@@ -5,6 +5,7 @@
 package za.ac.tut.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,11 +15,12 @@ import javax.persistence.Table;
  * @author Asus
  */
 @Entity
-//@Table(name="Customer_tbl")
+@Table(name="customers")
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @Column(name = "costomerNo")
     private Long id;
     private String fname;
     private String lname;

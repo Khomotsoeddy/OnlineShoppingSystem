@@ -4,6 +4,7 @@
  */
 package za.ac.tut.business;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,7 +28,6 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
     public CustomerFacade() {
         super(Customer.class);
     }
-
     @Override
     public void addCustomer(Customer customer) {
         create(customer);
@@ -39,5 +39,9 @@ public class CustomerFacade extends AbstractFacade<Customer> implements Customer
         
         return random;
     }
-    
+
+    @Override
+    public List<Customer> getCustomers() {
+        return findAll();
+    }
 }

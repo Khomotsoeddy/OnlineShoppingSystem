@@ -19,4 +19,8 @@ public interface OrderFacadeLocal {
     
     public int generateOrderNo();
     
+    public List<Order> getOrders();
+    
+    public Order findOrder(int id);
+    
 }

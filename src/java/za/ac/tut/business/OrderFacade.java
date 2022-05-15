@@ -4,6 +4,7 @@
  */
 package za.ac.tut.business;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -39,6 +40,16 @@ public class OrderFacade extends AbstractFacade<Order> implements OrderFacadeLoc
         int random = 9999 + (int)Math.floor(Math.random()*(99999 - 9999)+1);
         
         return random;
+    }
+
+    @Override
+    public List<Order> getOrders() {
+        return findAll();
+    }
+
+    @Override
+    public Order findOrder(int id) {
+        return find(id);
     }
     
 }

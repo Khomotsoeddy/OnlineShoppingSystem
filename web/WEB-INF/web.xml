@@ -56,6 +56,14 @@
         <servlet-name>OrderServlet</servlet-name>
         <servlet-class>za.ac.tut.web.OrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadOrdersServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.LoadOrdersServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderTrackingServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.OrderTrackingServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet.do</url-pattern>
@@ -111,6 +119,14 @@
     <servlet-mapping>
         <servlet-name>OrderServlet</servlet-name>
         <url-pattern>/OrderServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadOrdersServlet</servlet-name>
+        <url-pattern>/LoadOrdersServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderTrackingServlet</servlet-name>
+        <url-pattern>/OrderTrackingServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

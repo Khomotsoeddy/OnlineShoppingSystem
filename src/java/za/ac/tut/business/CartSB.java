@@ -7,7 +7,9 @@ package za.ac.tut.business;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
+import za.ac.tut.business.CartSBLocal;
 import za.ac.tut.model.Cart;
+import za.ac.tut.model.Store;
 import za.ac.tut.model.Store;
 
 /**
