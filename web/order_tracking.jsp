@@ -4,6 +4,7 @@
     Author     : Asus
 --%>
 
+<%@page import="za.ac.tut.entity.Order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,15 +13,17 @@
 </head>
 <body style="background: radial-gradient(#fff,#ffd6d6)">
     <%@include file="include/navbar.jsp"%>
+    <%
+        Order order = (Order) session.getAttribute("order");
+    %>
 
     <div class="order_container">
         <div class="details">
             <div class="order">
-                <h1>Order number <span>123342</span></h1>
+                <h1>Order number : <span><%=order.getOrderNo()%></span></h1>
             </div>
             <div class="date">
-                <p>Expected date: 12/14/2022</p>
-                <p>USP 1424256542</p>
+                <p>Expected date : <%=order.getExpectedDate()%></p>
             </div>
         </div>
     </div>
@@ -29,7 +32,7 @@
         <div class="order_progress">
             <ul>
                 <%
-                    if(1==1){
+                    if(order.getStatus().equals("processing")){
                 %>
                 <li>
                     <img src="./product_images/processing.png"/>
@@ -55,7 +58,7 @@
                 </li>
                 <%
                     }
-                    if(1==4){
+                    if(order.getStatus().equals("packaging")){
                 %>
                 <li>
                     <img src="./product_images/processing.png"/>
@@ -81,7 +84,7 @@
                 </li>
                 <%
                     }
-                    if(1==3){
+                    if(order.getStatus().equals("shipping")){
                 %>
                 <li>
                     <img src="./product_images/processing.png"/>
@@ -110,7 +113,7 @@
                 %>
                 
                 <%
-                    if(1==2){
+                    if(order.getStatus().equals("arrived")){
                 %>
                 <li>
                     <img src="./product_images/processing.png"/>

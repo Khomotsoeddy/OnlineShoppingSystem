@@ -5,12 +5,14 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import za.ac.tut.business.OrderFacadeLocal;
+import za.ac.tut.entity.Order;
 
 /**
  *
@@ -18,11 +20,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class OrderTrackingServlet extends HttpServlet {
 
+    @EJB
+    private OrderFacadeLocal orderFacade;
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        RequestDispatcher disp = request.getRequestDispatcher("order_tracking.jsp");
 //        disp.forward(request, response);
+        HttpSession session  = request.getSession();
+        int orderId = Integer.parseInt(request.getParameter("id"));
+        
+        Order order = orderFacade.findOrder(orderId);
+        
+        session.setAttribute("order", order);
         response.sendRedirect("order_tracking.jsp");
     }
 
