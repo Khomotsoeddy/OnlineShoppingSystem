@@ -624,3 +624,25 @@ form a{
         display: none;
     }
 }
+
+/*----------------upload image-------------------------*/
+.prod{
+    background: radial-gradient(#fff,#ffd6d6);
+    margin-top: 50px;
+}
+.prod .uploading{
+    margin-top: 400px;
+    width: 150px;
+    height: 150px;
+}
+.upload_container{
+    height: 370px;
+    width: 300px;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+

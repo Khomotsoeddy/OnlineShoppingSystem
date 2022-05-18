@@ -6,27 +6,41 @@
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/CartSBLocal.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/LoadCartServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/OrderFacadeLocal.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/AddToCartServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/index.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/include/navbar.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/ProductsProcessoor.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/entity/Product.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/update.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/CustomerFacadeLocal.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/AdminsFacade.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/CartSB.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/ProductFacadeLocal.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/UpdateOrderStatusServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/login.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/admin_order.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/UploadImageServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/RemoveItemServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/order_tracking.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/StatusServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/RegistrationServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/OrderTrackingServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/CheckoutServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/upload_product.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/entity/Order.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/AddressServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/OrderServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/order.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/CustomerFacade.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/shipping_address.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/AminOrderServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/cart.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/entity/Admins.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/AdminsFacadeLocal.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/model/Store.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/products.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/style.css</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/LoadOrdersServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/QuantityEncrDecrServlet.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/LoginServlet.java</file>

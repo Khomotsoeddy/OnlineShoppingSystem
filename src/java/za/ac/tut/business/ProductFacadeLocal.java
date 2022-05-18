@@ -20,5 +20,5 @@ public interface ProductFacadeLocal {
 
     Product findProduct(int productId);
     
-       
+    void addProduct(Product product); 
 }

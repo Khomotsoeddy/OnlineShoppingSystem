@@ -51,5 +51,10 @@ public class OrderFacade extends AbstractFacade<Order> implements OrderFacadeLoc
     public Order findOrder(int id) {
         return find(id);
     }
+
+    @Override
+    public void updateOrder(Order order) {
+        edit(order);
+    }
     
 }

@@ -7,17 +7,25 @@ package za.ac.tut.web;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import za.ac.tut.business.ProductFacadeLocal;
+import za.ac.tut.entity.Product;
 
 /**
  *
  * @author Asus
  */
+@MultipartConfig
 public class UploadImageServlet extends HttpServlet {
+
+    @EJB
+    private ProductFacadeLocal productFacade;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -27,12 +35,12 @@ public class UploadImageServlet extends HttpServlet {
         
         String fileName = file.getSubmittedFileName();
         String productCategory = request.getParameter("productCategory");
-        String productPrice = request.getParameter("productPrice");
-        String productId = request.getParameter("productId");
+        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+        int productId = Integer.parseInt(request.getParameter("productId"));
         String productName = request.getParameter("productName");
         
         
-        String uploadPath = "./product_images/"+fileName;
+        String uploadPath = "C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/product_images/"+fileName;
         
         System.out.println(fileName);
         try{
@@ -46,10 +54,24 @@ public class UploadImageServlet extends HttpServlet {
         }catch(Exception ex){
             ex.printStackTrace();
         }
+        Product product = createProduct(fileName,productCategory,productPrice,productName,productId);
+        productFacade.addProduct(product);
 //        System.out.println("Added");
 //        
 //        request.setAttribute("fileName", fileName);
 //        RequestDispatcher disp = request.getRequestDispatcher("display.jsp");
 //        disp.forward(request, response);
+    }
+
+    private Product createProduct(String fileName, String productCategory, double productPrice, String productName, int productId) {
+        Product product = new Product();
+        
+        product.setCategory(productCategory);
+        product.setImage(fileName);
+        product.setName(productName);
+        product.setPrice(productPrice);
+        product.setProductId(productId);
+        
+        return product;
     }
 }

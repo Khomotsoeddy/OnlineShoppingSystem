@@ -1,3 +1,5 @@
+<%@page import="za.ac.tut.entity.Admins"%>
+<%@page import="za.ac.tut.entity.Customer"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="index.jsp">POWER</a>
@@ -6,6 +8,7 @@
         </button>
 <%
     String emailAddress = (String) session.getAttribute("emailAddress");
+    String role = (String) session.getAttribute("role");
 %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -25,7 +28,7 @@
 
                 <%
                     }
-                    if (emailAddress != null) {
+                    if (emailAddress != null && role.equals("CUSTOMER")) {
                 %>
 
                 <li class="nav-item active">
@@ -33,6 +36,18 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="LoadOrdersServlet.do">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="LogoutServlet.do">Logout</a>
+                </li>
+                <%
+                    }else if(emailAddress != null && role.equals("ADMIN")){
+                %>
+                <li class="nav-item">
+                    <a class="nav-link active" href="upload_product.jsp">Add Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="AminOrderServlet.do">Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="LogoutServlet.do">Logout</a>

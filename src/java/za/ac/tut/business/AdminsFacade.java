@@ -8,14 +8,14 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import za.ac.tut.entity.Product;
+import za.ac.tut.entity.Admins;
 
 /**
  *
  * @author Asus
  */
 @Stateless
-public class ProductFacade extends AbstractFacade<Product> implements ProductFacadeLocal {
+public class AdminsFacade extends AbstractFacade<Admins> implements AdminsFacadeLocal {
 
     @PersistenceContext(unitName = "OnlineShoppingSystemPU")
     private EntityManager em;
@@ -25,24 +25,13 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
         return em;
     }
 
-    public ProductFacade() {
-        super(Product.class);
+    public AdminsFacade() {
+        super(Admins.class);
     }
 
     @Override
-    public List <Product> listAllProduct() {
+    public List<Admins> getAdmins() {
         return findAll();
     }
-
-    @Override
-    public Product findProduct(int productId) {
-        return find(productId);
-    }
-
-    @Override
-    public void addProduct(Product product) {
-        create(product);
-    }
-    
     
 }

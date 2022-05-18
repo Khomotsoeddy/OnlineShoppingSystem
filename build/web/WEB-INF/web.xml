@@ -64,6 +64,18 @@
         <servlet-name>OrderTrackingServlet</servlet-name>
         <servlet-class>za.ac.tut.web.OrderTrackingServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AminOrderServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.AminOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StatusServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.StatusServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateOrderStatusServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.UpdateOrderStatusServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet.do</url-pattern>
@@ -127,6 +139,18 @@
     <servlet-mapping>
         <servlet-name>OrderTrackingServlet</servlet-name>
         <url-pattern>/OrderTrackingServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AminOrderServlet</servlet-name>
+        <url-pattern>/AminOrderServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StatusServlet</servlet-name>
+        <url-pattern>/StatusServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateOrderStatusServlet</servlet-name>
+        <url-pattern>/UpdateOrderStatusServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
