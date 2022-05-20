@@ -38,12 +38,8 @@ public class AminOrderServlet extends HttpServlet {
         //Order order =(Order) session.getAttribute("order");
         //System.out.println("adress" + order.getAddress()+"\n customer number "+order.getCustomerNo()+"\n "+order.getStore().get(0).getName()+"\nPrice "+order.getTotalPrice());
         if(!orders.isEmpty()){
-            List<Product> products = new ArrayList<>();
+            List<Product> products = productFacade.listAllProduct();
             
-            for(int i = 0;i<orders.size();i++){
-                Product product = productFacade.findProduct(orders.get(i).getStore().get(i));
-                products.add(product);
-            }
             session.setAttribute("orders", orders);
             session.setAttribute("products", products);
             response.sendRedirect("admin_order.jsp");

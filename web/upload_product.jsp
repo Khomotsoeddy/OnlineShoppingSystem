@@ -17,7 +17,7 @@
         <div class="prod">
             <div class="uploading">
                 <div class="detail">
-                    htfasghjkmaslkjhh
+                    <p>Upload new product</p>
                 </div>
             </div>
             <div class="upload_container">

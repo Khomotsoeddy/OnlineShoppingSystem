@@ -630,13 +630,15 @@ form a{
     background: radial-gradient(#fff,#ffd6d6);
     margin-top: 50px;
 }
-.prod .uploading{
-    margin-top: 400px;
+.uploading{
+    margin-top: 40px;
     width: 150px;
     height: 150px;
+    align-content: center;
+    text-transform: capitalize;
 }
 .upload_container{
-    height: 370px;
+    height: 300px;
     width: 300px;
     background: #fff;
     position: relative;
@@ -645,4 +647,4 @@ form a{
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
+/*--------------home page--------------*/

@@ -19,9 +19,8 @@
     </head>
     <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%@include file="include/navbar.jsp"%>
-        <%
-            List<Order> orders = (List<Order>) session.getAttribute("orders");
-            List<Product> products = (List<Product>)  session.getAttribute("products");
+        <%            List<Order> orders = (List<Order>) session.getAttribute("orders");
+            List<Product> products = (List<Product>) session.getAttribute("products");
         %>
         <div class="order_container">
             <table>
@@ -34,25 +33,29 @@
                 </tr>
                 <%
                     if (!orders.isEmpty()) {
-                        for (Order o : orders) {
+                        for (Order order : orders) {
                 %>
                 <tr>
-                    <td><%=o.getOrderNo()%></td>
+                    <td><%=order.getOrderNo()%></td>
                     <td>
                         <%
-                            //List<Integer> store = o.getStore();
-                            for (Product p : products) {
+                            List<Integer> oppss = order.getStore();
+                            for (Integer op : oppss) {
+                                for (Product p : products) {
+                                    if (op == p.getProductId()) {
                         %>
                         <%=p.getName()%><br>
                         <%
+                                    }
+                                }
                             }
                         %>
                     </td>
 
-                    <td><%=o.getAddress().getStreetName()%></td>
-                    <td><%=o.getTotalPrice()%></td>
+                    <td><%=order.getAddress().getStreetName()%></td>
+                    <td><%=order.getTotalPrice()%></td>
 
-                    <td><a class="butn" href="OrderTrackingServlet.do?id=<%=o.getOrderNo()%>">TRACK &#8594;</a></td>
+                    <td><a class="butn" href="OrderTrackingServlet.do?id=<%=order.getOrderNo()%>">TRACK &#8594;</a></td>
                 </tr>
                 <%
                         }

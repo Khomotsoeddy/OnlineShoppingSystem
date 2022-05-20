@@ -5,7 +5,6 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -29,31 +28,22 @@ public class LoadOrdersServlet extends HttpServlet {
 
     @EJB
     private OrderFacadeLocal orderFacade;
-    
-    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         List<Order> orders = orderFacade.getOrders();
-        //Order order =(Order) session.getAttribute("order");
-        //System.out.println("adress" + order.getAddress()+"\n customer number "+order.getCustomerNo()+"\n "+order.getStore().get(0).getName()+"\nPrice "+order.getTotalPrice());
-        if(!orders.isEmpty()){
-            List<Product> products = new ArrayList<>();
+        List<Product> products = productFacade.listAllProduct();
+        
+        if (!orders.isEmpty()) {
             
-            for(int i = 0;i<orders.size();i++){
-                Product product = productFacade.findProduct(orders.get(i).getStore().get(i));
-                products.add(product);
-            }
             session.setAttribute("orders", orders);
             session.setAttribute("products", products);
             response.sendRedirect("order.jsp");
-        }else{
+        } else {
             response.sendRedirect("cart.jsp");
         }
-        
-        
-    }
 
+    }
 }

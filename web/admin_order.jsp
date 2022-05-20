@@ -37,11 +37,15 @@
                     <td><%=o.getOrderNo()%></td>
                     <td>
                         <%
-                            //List<Integer> store = o.getStore();
-                            for (Product p : products) {
+                            List<Integer> oppss = o.getStore();
+                            for (Integer op : oppss) {
+                                for (Product p : products) {
+                                    if (op == p.getProductId()) {
                         %>
                         <%=p.getName()%><br>
                         <%
+                                    }
+                                }
                             }
                         %>
                     </td>
