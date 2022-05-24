@@ -21,6 +21,7 @@
         <%@include file="include/navbar.jsp"%>
         <%            List<Order> orders = (List<Order>) session.getAttribute("orders");
             List<Product> products = (List<Product>) session.getAttribute("products");
+            Long costomerNo = (Long) session.getAttribute("costomerNo");
         %>
         <div class="order_container">
             <table>
@@ -34,6 +35,7 @@
                 <%
                     if (!orders.isEmpty()) {
                         for (Order order : orders) {
+                            if (order.getCustomerNo().longValue() == costomerNo.longValue()) {
                 %>
                 <tr>
                     <td><%=order.getOrderNo()%></td>
@@ -58,6 +60,7 @@
                     <td><a class="butn" href="OrderTrackingServlet.do?id=<%=order.getOrderNo()%>">TRACK &#8594;</a></td>
                 </tr>
                 <%
+                            }
                         }
                     }
                 %>

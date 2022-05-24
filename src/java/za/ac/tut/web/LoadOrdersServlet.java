@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.business.OrderFacadeLocal;
 import za.ac.tut.business.ProductFacadeLocal;
+import za.ac.tut.entity.Customer;
 import za.ac.tut.entity.Order;
 import za.ac.tut.entity.Product;
+import za.ac.tut.business.CustomerFacadeLocal;
+
 
 /**
  *
@@ -29,17 +32,29 @@ public class LoadOrdersServlet extends HttpServlet {
     @EJB
     private OrderFacadeLocal orderFacade;
 
+    @EJB
+    private CustomerFacadeLocal customerFacade;
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         List<Order> orders = orderFacade.getOrders();
         List<Product> products = productFacade.listAllProduct();
-        
+        List<Customer> customers = customerFacade.getCustomers();
+        String emailAddress = (String) session.getAttribute("emailAddress");
+        String password = (String) session.getAttribute("password");
+        Long costomerNo = null;
+        for (Customer s : customers) {
+            if (s.getEmail().equals(emailAddress) && s.getPassword().equals(password)) {
+                costomerNo = s.getId();
+            }
+        }
         if (!orders.isEmpty()) {
             
             session.setAttribute("orders", orders);
             session.setAttribute("products", products);
+            session.setAttribute("costomerNo", costomerNo);
             response.sendRedirect("order.jsp");
         } else {
             response.sendRedirect("cart.jsp");
