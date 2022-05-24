@@ -648,3 +648,23 @@ form a{
     margin-bottom: 50px;
 }
 /*--------------home page--------------*/
+
+.container-home2{
+    width: 100%;
+    height: 50vh;
+
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 0%;
+    box-sizing: border-box;
+
+}
+.container_ .col_2 .row .col_3 img:hover{
+    transform: translateY(-10px);
+}
+.carousel-item{
+    width: 50%;
+    height: 20vh;
+}

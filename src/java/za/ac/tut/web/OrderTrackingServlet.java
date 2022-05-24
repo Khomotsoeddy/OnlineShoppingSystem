@@ -26,8 +26,6 @@ public class OrderTrackingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        RequestDispatcher disp = request.getRequestDispatcher("order_tracking.jsp");
-//        disp.forward(request, response);
         HttpSession session  = request.getSession();
         int orderId = Integer.parseInt(request.getParameter("id"));
         

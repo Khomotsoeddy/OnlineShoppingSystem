@@ -26,7 +26,7 @@
                     </li>
                 </ul>
                 <div class="card_container">
-                    <h1>Address Detail</h1>
+                    <h1>Card Detail</h1>
                     <form action="PurchasingServlet.do" method="post">
                         <input type="text" name="cardHolder" placeholder="card holder"/>
                         <input type="text" name="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx"/>

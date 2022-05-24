@@ -36,9 +36,7 @@ public class BuyNowServlet extends HttpServlet {
         ArrayList<Cart> cartList = new ArrayList<>();
         if(emailAddress != null){
             int productId = Integer.parseInt(request.getParameter("id"));
-            Integer quantity = 0;//Integer.parseInt(request.getParameter("quantity"));
-            
-            //ArrayList<Cart> cartList = (ArrayList<Cart>) session.getAttribute("Cart-List");
+            Integer quantity = 0;
             if(quantity <= 0){
                 quantity=1;
                 Cart ct  = new Cart();

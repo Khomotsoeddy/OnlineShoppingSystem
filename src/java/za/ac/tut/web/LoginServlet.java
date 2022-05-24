@@ -66,8 +66,6 @@ public class LoginServlet extends HttpServlet {
         
         if(message.equals("oops")){
             session.setAttribute("message",message);
-//            RequestDispatcher disp = request.getRequestDispatcher("login.jsp");
-//            disp.forward(request, response);
             response.sendRedirect("login.jsp");
         }
     }

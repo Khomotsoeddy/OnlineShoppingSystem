@@ -42,7 +42,6 @@ public class UploadImageServlet extends HttpServlet {
         
         String uploadPath = "C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/product_images/"+fileName;
         
-        System.out.println(fileName);
         try{
             FileOutputStream fos = new FileOutputStream(uploadPath);
             InputStream is= file.getInputStream();
@@ -56,11 +55,6 @@ public class UploadImageServlet extends HttpServlet {
         }
         Product product = createProduct(fileName,productCategory,productPrice,productName,productId);
         productFacade.addProduct(product);
-//        System.out.println("Added");
-//        
-//        request.setAttribute("fileName", fileName);
-//        RequestDispatcher disp = request.getRequestDispatcher("display.jsp");
-//        disp.forward(request, response);
     }
 
     private Product createProduct(String fileName, String productCategory, double productPrice, String productName, int productId) {

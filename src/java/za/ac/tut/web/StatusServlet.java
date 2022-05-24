@@ -5,7 +5,6 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +22,6 @@ public class StatusServlet extends HttpServlet {
 
     @EJB
     private OrderFacadeLocal orderFacade;
-
-
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -43,15 +40,5 @@ public class StatusServlet extends HttpServlet {
             throws ServletException, IOException {
         doGet(request, response);
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

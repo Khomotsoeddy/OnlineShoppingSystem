@@ -35,11 +35,9 @@ public class RegistrationServlet extends HttpServlet {
         String zip_code = request.getParameter("zipCode");
         String password = request.getParameter("password");
         String role = "CUSTOMER";
-        //customerFacade.generateCustomerId();
         Long customer_id = Long.parseLong(""+customerFacade.generateCustomerId());
         
         Customer customer = createCustomer(customer_id,fname,lname,phoneNumber,email,street,city,state,zip_code,password,role);
-        System.out.println(customer);
         
         customerFacade.addCustomer(customer);
         
