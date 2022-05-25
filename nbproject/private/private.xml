@@ -3,13 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/build/generated-sources/ap-source-output/za/ac/tut/entity/Admins_.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/about.html</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/index.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/build/generated-sources/ap-source-output/za/ac/tut/entity/Address_.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/build/generated-sources/ap-source-output/za/ac/tut/entity/Customer_.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/build/generated-sources/ap-source-output/za/ac/tut/entity/Order_.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/cart.jsp</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/build/generated-sources/ap-source-output/za/ac/tut/entity/Product_.java</file>
-            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/entity/Order.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/AddressFacade.java</file>
             <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/entity/Product.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/update.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/style.css</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/OrderConfirmation.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/business/AdminsFacade.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/LoadOrdersServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/order_tracking.jsp</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/build/generated-sources/ap-source-output/za/ac/tut/entity/Admins_.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/orderconfirm.html</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/entity/Order.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/src/java/za/ac/tut/web/OrderServlet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/INT316D/project/OnlineShopping/web/order.jsp</file>
         </group>
     </open-files>
 </project-private>

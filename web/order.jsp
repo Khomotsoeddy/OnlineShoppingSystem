@@ -54,7 +54,12 @@
                         %>
                     </td>
 
-                    <td><%=order.getAddress().getStreetName()%></td>
+                    <td>
+                        <%=order.getStreetName()%><br>
+                        <%=order.getTown()%><br>
+                        <%=order.getProvince()%><br>
+                        <%=order.getZipCode()%>
+                    </td>
                     <td><%=order.getTotalPrice()%></td>
 
                     <td><a class="butn" href="OrderTrackingServlet.do?id=<%=order.getOrderNo()%>">TRACK &#8594;</a></td>

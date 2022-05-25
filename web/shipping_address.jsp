@@ -12,6 +12,13 @@
         <title>Checkout Page</title>
     </head>
     <body style="background: radial-gradient(#fff,#ffd6d6)">
+        
+        <%
+            String town = (String)session.getAttribute("town");
+            String streetName = (String)session.getAttribute("streetName");
+            String state = (String)session.getAttribute("state");
+            String zipCode = (String)session.getAttribute("zipCode");
+        %>
         <%@include file="include/navbar.jsp"%>
         <div class="track">
             <div class="checkout_progress">
@@ -28,11 +35,10 @@
                 <div class="address_container">
                     <h1>Address Detail</h1>
                     <form action="AddressServlet.do" method="post">
-                        <input type="text" name="streetName" placeholder="street name"/>
-                        <input type="text" name="suburb" placeholder="suburb"/>
-                        <input type="text" name="town" placeholder="town"/>
-                        <input type="text" name="province" placeholder="province"/>
-                        <input type="number" name="zipCode" placeholder="ZIP code" accept="number"/>
+                        <input type="text" name="streetName" placeholder="street name" value="<%=streetName%>"/>
+                        <input type="text" name="town" placeholder="town" value="<%=town%>"/>
+                        <input type="text" name="province" placeholder="province" value="<%=state%>"/>
+                        <input type="text" name="zipCode" placeholder="ZIP code" value="<%=zipCode%>"/>
                         <input type="submit" value="NEXT" class="butn"/>
                     </form>
                 </div>

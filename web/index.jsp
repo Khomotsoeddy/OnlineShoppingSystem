@@ -70,26 +70,26 @@
                     </div>
                 </div>
             </div>
-            <div class="container-home2">
+            <div class="container-home2" style="background: linear-gradient(11deg, #ff3a3a -15.11%, #ae249a 51.46%, #081ea9 113.9%);">
                 <div class="row">
                     <div class="col_4">
                         <h1>PURPOSE</h1>
-                        <p>We want to make life easy for people when it comes to buying stuff that needs delivery.
+                        <p style="color: black">We want to make life easy for people when it comes to buying stuff that needs delivery.
                             By using this app, you will be able to make orders and get your
-                            <br>orders dilivered to a spacific address that you provide us with.</p>
+                            <br>orders delivered to a specific address that you provide us with.</p>
                     </div>
 
                     <div class="col_4">
                         <h1>TARGET</h1>
-                        <p>This application is user friendly, It is for anyone who is interested in
-                            <br> improving thier lives by using gym products.<br>
+                        <p style="color: black">This application is user friendly, It is for anyone who is interested in
+                            <br> improving their lives by using gym products.<br>
                             In other words, we are bringing GYM to your home</p>
 
                     </div>
 
                     <div class="col_4">
                         <h1>STORE</h1>
-                        <p>The store has 3 categories of products so far, make sure
+                        <p style="color: black">The store has 3 categories of products so far, make sure
                             <br> you add the products to your cart.<br>
                             you will get a full summary of your orders after paying and then you
                             <br>will be able to track the progress of your order</p>
@@ -98,7 +98,7 @@
 
                     <div class="col_4">
                         <h1>SUMMARY</h1>
-                        <p>Make sure you create an account with us so that you can be able to place
+                        <p style="color: black">Make sure you create an account with us so that you can be able to place
                             <br> your orders any time and get to view your orders in detail.</p>
 
                     </div>

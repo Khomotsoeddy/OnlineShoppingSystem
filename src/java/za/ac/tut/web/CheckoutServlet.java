@@ -8,11 +8,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import za.ac.tut.business.CustomerFacadeLocal;
+import za.ac.tut.entity.Customer;
 import za.ac.tut.model.Cart;
 import za.ac.tut.model.Store;
 
@@ -22,7 +26,9 @@ import za.ac.tut.model.Store;
  */
 public class CheckoutServlet extends HttpServlet {
 
-
+    @EJB
+    private CustomerFacadeLocal customerFacade;
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,7 +39,24 @@ public class CheckoutServlet extends HttpServlet {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         dateFormat.format(date);
+        List<Customer> customers = customerFacade.getCustomers();
+        String emailAddress = (String) session.getAttribute("emailAddress");
+        String password = (String) session.getAttribute("password");
         
+        for (Customer s : customers) {
+            if (s.getEmail().equals(emailAddress) && s.getPassword().equals(password)) {
+                
+                String streetName = s.getStreet();
+                String town = s.getCity();
+                String state = s.getState();
+                String zipCode = s.getZip_code();
+        
+                session.setAttribute("town", town);
+                session.setAttribute("streetName", streetName);
+                session.setAttribute("state", state);
+                session.setAttribute("zipCode", zipCode);
+            }
+        }
         if(cartList != null){
             for(Store c:cartList){
                 

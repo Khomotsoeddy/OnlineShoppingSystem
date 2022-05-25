@@ -58,7 +58,7 @@
                                 <input type="email" placeholder="Email Address" name="emailAddress"/>
                                 <input type="text" placeholder="Street name" name="streetName"/>
                                 <input type="text" placeholder="City" name="city"/>
-                                <input type="text" placeholder="State" name="state"/>
+                                <input type="text" placeholder="Province" name="state"/>
                                 <input type="text" placeholder="Zip Code" name="zipCode"/>
                                 <input type="password" placeholder="Password" name="password"/>
                                 <input type="submit" value="Register" class="butn"/>

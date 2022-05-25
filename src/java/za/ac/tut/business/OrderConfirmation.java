@@ -24,8 +24,8 @@ public class OrderConfirmation implements OrderConfirmationLocal {
 
     @Override
     public void orderConfirm(String emailAddress,Order order) {
-        final String fromEmail = "powerwm111@gmail.com";
-        final String password = "Power@123";
+        final String fromEmail = "khomotsoeddy@gmail.com";
+        final String password = "Eddyk@071";
         //String toEmail ;
 
         Properties ppt = new Properties();

@@ -23,7 +23,6 @@ import javax.servlet.http.HttpSession;
 import za.ac.tut.business.CustomerFacadeLocal;
 import za.ac.tut.business.OrderConfirmationLocal;
 import za.ac.tut.business.OrderFacadeLocal;
-import za.ac.tut.entity.Address;
 import za.ac.tut.entity.Customer;
 import za.ac.tut.entity.Order;
 import za.ac.tut.model.Store;
@@ -86,11 +85,11 @@ public class OrderServlet extends HttpServlet {
         String status = "processing";
         String town = (String) session.getAttribute("town");
         String streetName = (String) session.getAttribute("streetName");
-        String suburb = (String) session.getAttribute("suburb");
+        //String suburb = (String) session.getAttribute("suburb");
         String province = (String) session.getAttribute("province");
         String zipCode = (String) session.getAttribute("zipCode");
 
-        Order order = createNewOrder(orderNo, products, costomerNo, expectedDate, orderedDate, totalPrice, totalQuantity, streetName, town, suburb, province, zipCode, status);
+        Order order = createNewOrder(orderNo, products, costomerNo, expectedDate, orderedDate, totalPrice, totalQuantity, streetName, town, province, zipCode, status);
         orderFacade.createOrder(order);
         orderConfirmation.orderConfirm(emailAddress, order);
 
@@ -103,19 +102,16 @@ public class OrderServlet extends HttpServlet {
         doGet(request, response);
     }
 
-    private Order createNewOrder(int orderNo, List<Integer> products, Long cos, String expectedDate, String orderedDate, double totalPrice, int totalQuantity, String streetName, String town, String suburb, String province, String zipCode, String status) {
+    private Order createNewOrder(int orderNo, List<Integer> products, Long cos, String expectedDate, String orderedDate, double totalPrice, int totalQuantity, String streetName, String town, String province, String zipCode, String status) {
         Order order = new Order();
-        Address address = new Address();
 
-        address.setProvince(province);
-        address.setStreetName(streetName);
-        address.setSuburb(suburb);
-        address.setTown(town);
-        address.setZipCode(zipCode);
-
+        order.setProvince(province);
+        order.setStreetName(streetName);
+        //order.setSuburb(suburb);
+        order.setTown(town);
+        order.setZipCode(zipCode);
         order.setOrderNo(orderNo);
         order.setCustomerNo(cos);
-        order.setAddress(address);
         order.setExpectedDate(expectedDate);
         order.setOrderedDate(orderedDate);
         order.setStore(products);

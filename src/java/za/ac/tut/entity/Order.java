@@ -7,15 +7,12 @@ package za.ac.tut.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -29,9 +26,10 @@ public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private int orderNo;
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinColumn(name ="address_fk")
-    private Address address;
+    private String streetName;
+    private String town;
+    private String province;
+    private String zipCode;
     private String OrderedDate;
     private String expectedDate;
     private Long customerNo;
@@ -63,13 +61,38 @@ public class Order implements Serializable {
         this.products = products;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
 
     public String getOrderedDate() {
         return OrderedDate;
@@ -118,13 +141,5 @@ public class Order implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-
-//    public List<Integer> getProducts() {
-//        return products;
-//    }
-//
-//    public void setProducts(List<Integer> products) {
-//        this.products = products;
-//    }
     
 }

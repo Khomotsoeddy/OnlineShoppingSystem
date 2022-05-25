@@ -15,7 +15,8 @@
     <%
         Order order = (Order) session.getAttribute("order");
     %>
-    <body>
+    <body style="background: radial-gradient(#fff,#ffd6d6)">
+    <center>
         <div class="update">
             <div class="details">
                 <div class="order">
@@ -26,10 +27,12 @@
                 </div>
             </div>
         </div>
+
         <div class="update_container">
             <form action="UpdateOrderStatusServlet.do" method="post">
+                <p><b>UPDATE ORDER</b></p>
                 <select name="updates">
-                    <option>Update order</option>
+                    <option></option>
                     <option>processing</option>
                     <option>packaging</option>
                     <option>shipping</option>
@@ -39,5 +42,6 @@
             </form>
 
         </div>
-    </body>
+    </center>
+</body>
 </html>
