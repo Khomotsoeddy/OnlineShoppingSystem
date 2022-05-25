@@ -46,7 +46,12 @@
                                 for (Product p : products) {
                                     if (op == p.getProductId()) {
                         %>
-                        <%=p.getName()%><br>
+                        <div class="cart_info">
+                            <a href="ProductServlet.do"><img src="./product_images/<%=p.getImage()%>"/></a>
+                            <div>
+                                <p><%=p.getName()%></p>
+                            </div>
+                        </div>
                         <%
                                     }
                                 }
