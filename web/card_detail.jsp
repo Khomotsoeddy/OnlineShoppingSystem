@@ -12,6 +12,10 @@
         <title>Checkout Page</title>
     </head>
     <body style="background: radial-gradient(#fff,#ffd6d6)">
+        <%
+            String amount = (String)session.getAttribute("amount");
+            String errorCard = (String)session.getAttribute("errorCard");
+        %>
         <%@include file="include/navbar.jsp"%>
         <div class="track">
             <div class="order_progress">
@@ -31,7 +35,22 @@
                         <input type="text" name="cardHolder" placeholder="card holder"/>
                         <input type="text" name="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx"/>
                         <input type="text" name="expireDate" placeholder="MM/YY"/>
-                        <input type="text" name="CVC" placeholder="000"/>
+                        <input type="text" name="CVV" placeholder="000"/>
+                        <%
+                            if(amount == null ){
+                            
+                            }else{
+                        %>
+                        <p style="color: red">You don't have enough amount</p>
+                        <%        
+                            }if( errorCard == null){
+                                
+                            }else {
+                        %>
+                            <p style="color: red">Wrong card details</p>
+                        <%
+                            }
+                        %>
                         <input type="submit" value="NEXT" class="butn"/>
                     </form>
                 </div>
