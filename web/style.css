@@ -288,7 +288,10 @@ select:focus{
     .row{
         text-align: center;
     }
-    .col_2, .col_3, .col_4{
+    .container-home2{
+        text-align: center;
+    }
+    .col_2, .col_3, .col_4 {
         flex-basis: 100%;
     }
 }
@@ -632,7 +635,7 @@ form a{
 }
 .uploading{
     margin-top: 40px;
-    width: 150px;
+    width: auto;
     height: 150px;
     align-content: center;
     text-transform: capitalize;
@@ -644,7 +647,7 @@ form a{
     position: relative;
     text-align: center;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 1px;
     margin-bottom: 50px;
 }
 /*--------------home page--------------*/

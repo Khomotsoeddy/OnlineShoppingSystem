@@ -19,9 +19,9 @@
     </head>
     <body style="background: radial-gradient(#fff,#ffd6d6)">
         <%@include file="include/navbar.jsp"%>
-        <%
-            List<Order> orders = (List<Order>) session.getAttribute("orders");
-            List<Product> products = (List<Product>)  session.getAttribute("products");
+        <%            List<Order> orders = (List<Order>) session.getAttribute("orders");
+            List<Product> products = (List<Product>) session.getAttribute("products");
+            Long costomerNo = (Long) session.getAttribute("costomerNo");
         %>
         <div class="order_container">
             <table>
@@ -34,27 +34,43 @@
                 </tr>
                 <%
                     if (!orders.isEmpty()) {
-                        for (Order o : orders) {
+                        for (Order order : orders) {
+                            if (order.getCustomerNo().longValue() == costomerNo.longValue()) {
                 %>
                 <tr>
-                    <td><%=o.getOrderNo()%></td>
+                    <td><%=order.getOrderNo()%></td>
                     <td>
                         <%
-                            //List<Integer> store = o.getStore();
-                            for (Product p : products) {
+                            List<Integer> oppss = order.getStore();
+                            for (Integer op : oppss) {
+                                for (Product p : products) {
+                                    if (op == p.getProductId()) {
                         %>
-                        <%=p.getName()%><br>
+                        <div class="cart_info">
+                            <a href="ProductServlet.do"><img src="./product_images/<%=p.getImage()%>"/></a>
+                            <div>
+                                <p><%=p.getName()%></p>
+                            </div>
+                        </div>
                         <%
+                                    }
+                                }
                             }
                         %>
                     </td>
 
-                    <td><%=o.getAddress().getStreetName()%></td>
-                    <td><%=o.getTotalPrice()%></td>
+                    <td>
+                        <%=order.getStreetName()%><br>
+                        <%=order.getTown()%><br>
+                        <%=order.getProvince()%><br>
+                        <%=order.getZipCode()%>
+                    </td>
+                    <td><%=order.getTotalPrice()%></td>
 
-                    <td><a class="butn" href="OrderTrackingServlet.do?id=<%=o.getOrderNo()%>">TRACK &#8594;</a></td>
+                    <td><a class="butn" href="OrderTrackingServlet.do?id=<%=order.getOrderNo()%>">TRACK &#8594;</a></td>
                 </tr>
                 <%
+                            }
                         }
                     }
                 %>

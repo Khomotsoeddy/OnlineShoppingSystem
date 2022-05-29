@@ -51,15 +51,15 @@ public class PurchasingServlet extends HttpServlet {
                         session.setAttribute("amount", amount);
                         //response.sendRedirect("card_detail");
                         RequestDispatcher disp = request.getRequestDispatcher("card_detail.jsp");
-                disp.forward(request, response);
+                    disp.forward(request, response);
                     }
                 }
             } else {
                 if (errorCard.equals("errorCard")) {
                     session.setAttribute("errorCard", errorCard);
-                    response.sendRedirect("card_detail");
+                    //response.sendRedirect("card_detail");
                     RequestDispatcher disp = request.getRequestDispatcher("card_detail.jsp");
-                disp.forward(request, response);
+                    disp.forward(request, response);
                 }
             }
         } else {

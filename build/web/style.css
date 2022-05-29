@@ -288,7 +288,10 @@ select:focus{
     .row{
         text-align: center;
     }
-    .col_2, .col_3, .col_4{
+    .container-home2{
+        text-align: center;
+    }
+    .col_2, .col_3, .col_4 {
         flex-basis: 100%;
     }
 }
@@ -630,19 +633,47 @@ form a{
     background: radial-gradient(#fff,#ffd6d6);
     margin-top: 50px;
 }
-.prod .uploading{
-    margin-top: 400px;
-    width: 150px;
+.uploading{
+    margin-top: 40px;
+    width: auto;
     height: 150px;
+    align-content: center;
+    text-transform: capitalize;
 }
 .upload_container{
-    height: 370px;
+    height: 300px;
     width: 300px;
     background: #fff;
     position: relative;
     text-align: center;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 1px;
     margin-bottom: 50px;
 }
+/*--------------home page--------------*/
 
+.container-home2{
+    width: 100%;
+    height: 50vh;
+
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 0%;
+    box-sizing: border-box;
+
+}
+.container_ .col_2 .row .col_3 img:hover{
+    transform: translateY(-10px);
+}
+.carousel-item{
+    width: 50%;
+    height: 20vh;
+}
+.container-home2 p{
+    color: black;
+}
+.container-home2 p{
+    color: black;
+}

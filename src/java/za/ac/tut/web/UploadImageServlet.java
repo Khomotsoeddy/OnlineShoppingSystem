@@ -55,6 +55,7 @@ public class UploadImageServlet extends HttpServlet {
         }
         Product product = createProduct(fileName,productCategory,productPrice,productName,productId);
         productFacade.addProduct(product);
+        response.sendRedirect("ProductServlet.do");
     }
 
     private Product createProduct(String fileName, String productCategory, double productPrice, String productName, int productId) {
